@@ -1,0 +1,457 @@
+"Gender","Suspicious","Betrayed","Worried","Distrustful","Jealousy","Rejected","Hurt","Anxious","Angry","Threatened","Sad","Upset","Attractiveness_check1","Attractiveness_check2","Assertiveness","Self_confidence","Extroverted","Influential","Socially_competent","Good_judge_of_character","Attractive_not_dominant_woman","Unattractive_dominant_woman","Attractive_dominant_woman","Unattractive_not_dominant_woman","Attractive_not_dominant_man","Unattractive_dominant_man","Attractive_dominant_man","Unattractive_not_dominant_man","Mate_value1","Mate_value2","Mate_value3","Mate_value4","Mate_value5","Mate_value6","Sample","Attractive_condition","Dominant_condition","ID"
+1,5,3,3,3,3,3,3,3,3,3,3,3,7,7,1,4,3,4,4,4,NA,NA,NA,NA,NA,1,NA,NA,6,6,6,4,5,5,"Online","Not Attractive","Dominant",1
+1,3,2,2,3,4,4,4,4,3,3,4,4,5,3,3,3,3,4,4,2,NA,NA,NA,NA,NA,1,NA,NA,2,1,1,1,1,1,"Online","Not Attractive","Dominant",2
+2,4,4,2,4,5,5,4,4,5,3,2,4,3,5,5,5,4,5,4,5,NA,NA,1,NA,NA,NA,NA,NA,7,7,6,6,7,7,"Online","Attractive","Dominant",3
+1,4,4,3,2,4,3,2,2,2,2,2,2,6,7,3,3,3,3,4,3,NA,NA,NA,NA,1,NA,NA,NA,5,3,3,3,5,2,"Online","Attractive","Not Dominant",4
+1,2,1,2,2,2,1,1,2,2,1,1,2,5,5,2,2,2,1,4,4,NA,NA,NA,NA,NA,NA,NA,1,2,2,1,1,2,2,"Online","Not Attractive","Not Dominant",5
+1,3,2,2,2,3,2,3,2,3,2,2,2,3,4,3,4,4,2,3,3,NA,NA,NA,NA,NA,NA,1,NA,5,5,5,5,5,4,"Online","Attractive","Dominant",6
+2,3,2,2,2,2,2,2,2,1,2,2,2,3,4,2,2,4,3,2,1,1,NA,NA,NA,NA,NA,NA,NA,5,5,5,4,5,4,"Online","Attractive","Not Dominant",7
+1,2,1,2,1,2,1,2,2,1,1,1,2,6,6,4,4,5,5,5,3,NA,NA,NA,NA,NA,1,NA,NA,3,3,2,2,5,2,"Online","Not Attractive","Dominant",8
+2,1,1,1,1,1,1,1,1,1,1,1,1,7,2,2,4,2,1,1,3,NA,NA,NA,1,NA,NA,NA,NA,4,3,3,3,3,4,"Online","Not Attractive","Not Dominant",9
+1,1,1,1,1,1,1,1,2,2,1,1,1,5,5,2,2,2,2,2,2,NA,NA,NA,NA,NA,NA,1,NA,4,5,3,2,5,2,"Online","Attractive","Dominant",10
+1,4,5,4,3,3,4,3,5,2,4,3,3,4,2,3,3,3,3,3,3,NA,NA,NA,NA,1,NA,NA,NA,5,1,1,1,1,1,"Online","Attractive","Not Dominant",11
+1,5,5,5,5,4,5,5,4,4,2,4,5,7,6,4,3,3,1,2,2,NA,NA,NA,NA,NA,NA,NA,1,7,7,4,3,7,1,"Online","Not Attractive","Not Dominant",12
+1,4,2,2,3,5,3,3,4,2,4,2,3,6,4,3,4,4,5,4,3,NA,NA,NA,NA,NA,1,NA,NA,3,2,2,1,3,1,"Online","Not Attractive","Dominant",13
+1,5,5,5,5,5,3,4,5,5,3,4,4,6,6,2,2,2,2,4,4,NA,NA,NA,NA,1,NA,NA,NA,3,5,3,1,5,1,"Online","Attractive","Not Dominant",14
+2,5,3,4,4,5,4,5,5,5,5,4,5,5,5,4,5,4,4,5,3,NA,1,NA,NA,NA,NA,NA,NA,5,6,5,3,5,2,"Online","Not Attractive","Dominant",15
+1,1,2,2,2,3,3,2,2,1,3,2,2,5,5,2,5,5,1,5,2,NA,NA,NA,NA,NA,NA,1,NA,5,3,2,5,5,3,"Online","Attractive","Dominant",16
+2,3,2,2,2,2,2,2,1,1,1,2,2,6,7,3,3,3,3,3,3,NA,NA,NA,1,NA,NA,NA,NA,3,5,5,5,5,5,"Online","Not Attractive","Not Dominant",17
+2,1,1,1,2,2,1,1,1,1,1,1,1,3,3,4,4,5,4,4,4,NA,NA,1,NA,NA,NA,NA,NA,5,4,5,5,5,4,"Online","Attractive","Dominant",18
+2,3,3,4,4,5,3,4,4,4,3,4,4,6,4,4,3,4,1,2,3,1,NA,NA,NA,NA,NA,NA,NA,5,5,3,3,3,1,"Online","Attractive","Not Dominant",19
+1,3,2,5,2,1,1,3,5,3,1,1,1,6,5,2,3,4,1,1,1,NA,NA,NA,NA,1,NA,NA,NA,5,4,4,1,4,1,"Online","Attractive","Not Dominant",20
+2,3,4,3,2,3,4,3,3,4,2,2,1,4,5,3,4,3,4,5,1,NA,NA,1,NA,NA,NA,NA,NA,3,5,5,4,6,3,"Online","Attractive","Dominant",21
+2,2,2,2,4,5,4,3,5,3,2,3,5,5,4,3,2,2,2,1,3,1,NA,NA,NA,NA,NA,NA,NA,2,2,1,3,5,4,"Online","Attractive","Not Dominant",22
+1,4,3,2,2,3,1,1,3,2,1,2,2,4,4,2,4,3,2,4,1,NA,NA,NA,NA,NA,NA,NA,1,2,2,2,2,2,1,"Online","Not Attractive","Not Dominant",23
+2,3,2,4,3,4,3,2,4,3,1,4,4,6,6,3,4,4,2,3,3,NA,NA,NA,1,NA,NA,NA,NA,3,3,5,3,3,7,"Online","Not Attractive","Not Dominant",24
+1,2,2,4,2,1,5,5,3,5,5,3,3,4,4,4,3,2,2,3,3,NA,NA,NA,NA,NA,NA,1,NA,4,4,2,7,7,6,"Online","Attractive","Dominant",25
+2,1,1,1,1,2,2,2,4,2,1,1,1,4,5,4,3,3,3,4,5,NA,NA,NA,1,NA,NA,NA,NA,6,6,6,5,5,2,"Online","Not Attractive","Not Dominant",26
+1,4,4,4,4,5,4,5,5,4,4,5,5,5,2,5,5,5,5,5,4,NA,NA,NA,NA,NA,1,NA,NA,2,2,2,2,2,2,"Online","Not Attractive","Dominant",27
+1,3,2,2,2,2,2,2,2,2,2,1,1,3,2,3,2,2,1,4,4,NA,NA,NA,NA,1,NA,NA,NA,5,3,2,1,3,1,"Online","Attractive","Not Dominant",28
+2,2,2,2,2,2,2,2,2,2,2,2,2,4,3,4,4,3,4,4,3,NA,1,NA,NA,NA,NA,NA,NA,5,4,3,2,4,4,"Online","Not Attractive","Dominant",29
+1,3,2,2,3,3,1,1,4,1,1,2,3,6,6,2,2,2,2,3,4,NA,NA,NA,NA,NA,NA,NA,1,6,5,5,4,5,3,"Online","Not Attractive","Not Dominant",30
+2,3,4,4,5,5,5,5,4,4,5,3,3,5,5,4,4,4,2,2,3,NA,1,NA,NA,NA,NA,NA,NA,5,4,3,4,4,4,"Online","Not Attractive","Dominant",31
+2,3,2,3,2,3,2,2,3,3,2,1,2,3,4,4,5,5,5,5,5,NA,NA,1,NA,NA,NA,NA,NA,5,5,5,5,6,3,"Online","Attractive","Dominant",32
+2,2,3,2,2,3,1,1,2,1,1,1,1,6,6,4,4,4,4,4,3,NA,1,NA,NA,NA,NA,NA,NA,4,5,3,5,6,3,"Online","Not Attractive","Dominant",33
+2,4,4,4,3,4,4,4,4,3,3,5,5,6,7,4,4,5,4,5,3,NA,NA,1,NA,NA,NA,NA,NA,6,6,5,5,7,5,"Online","Attractive","Dominant",34
+2,4,4,4,4,4,4,4,2,3,4,3,3,2,2,3,1,2,4,4,4,1,NA,NA,NA,NA,NA,NA,NA,2,5,5,5,5,5,"Online","Attractive","Not Dominant",35
+1,2,2,2,2,3,1,2,3,3,1,2,2,4,5,4,4,5,4,5,4,NA,NA,NA,NA,NA,NA,1,NA,6,6,6,6,6,3,"Online","Attractive","Dominant",36
+1,4,4,5,4,5,4,4,5,3,4,3,3,4,5,3,4,4,4,5,3,NA,NA,NA,NA,NA,1,NA,NA,4,4,3,4,5,2,"Online","Not Attractive","Dominant",37
+1,3,1,2,2,2,1,1,1,1,1,1,1,6,6,3,2,4,2,2,3,NA,NA,NA,NA,NA,1,NA,NA,6,5,5,5,6,6,"Online","Not Attractive","Dominant",38
+2,5,5,5,5,5,4,5,5,4,5,4,4,4,3,5,5,5,3,4,4,NA,1,NA,NA,NA,NA,NA,NA,5,5,3,6,4,3,"Online","Not Attractive","Dominant",39
+2,3,3,3,3,3,4,4,2,4,2,5,5,6,4,3,2,2,2,3,4,NA,NA,NA,1,NA,NA,NA,NA,4,3,3,3,3,2,"Online","Not Attractive","Not Dominant",40
+1,4,3,3,3,4,3,4,4,3,4,3,3,5,4,5,5,4,4,4,5,NA,NA,NA,NA,NA,NA,1,NA,4,3,3,2,2,1,"Online","Attractive","Dominant",41
+2,3,2,2,2,3,2,2,2,2,2,2,2,3,4,2,2,2,2,3,2,NA,NA,NA,1,NA,NA,NA,NA,4,3,3,5,4,6,"Online","Not Attractive","Not Dominant",42
+2,4,3,4,4,4,3,4,4,3,4,4,4,3,3,4,4,4,4,4,3,1,NA,NA,NA,NA,NA,NA,NA,5,5,4,5,5,3,"Online","Attractive","Not Dominant",43
+1,5,5,4,5,3,5,5,5,4,4,4,5,3,5,4,4,4,4,4,4,NA,NA,NA,NA,1,NA,NA,NA,5,5,6,3,6,3,"Online","Attractive","Not Dominant",44
+2,2,3,3,2,5,4,3,1,3,4,2,2,3,3,4,5,4,5,5,4,NA,NA,1,NA,NA,NA,NA,NA,3,5,4,6,5,7,"Online","Attractive","Dominant",45
+2,2,1,2,2,2,2,3,3,3,2,3,3,5,5,2,4,3,4,3,4,NA,NA,NA,1,NA,NA,NA,NA,5,5,5,6,5,2,"Online","Not Attractive","Not Dominant",46
+1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,3,2,4,2,3,1,NA,NA,NA,NA,1,NA,NA,NA,4,5,3,4,2,4,"Online","Attractive","Not Dominant",47
+2,2,2,2,3,3,2,3,3,3,2,4,3,5,6,3,4,3,5,5,5,NA,1,NA,NA,NA,NA,NA,NA,5,5,5,6,5,7,"Online","Not Attractive","Dominant",48
+1,3,3,4,3,3,2,3,4,3,4,2,3,5,5,2,4,3,3,4,3,NA,NA,NA,NA,NA,NA,NA,1,5,4,4,3,5,4,"Online","Not Attractive","Not Dominant",49
+2,4,4,4,5,5,3,4,5,4,5,4,5,3,4,4,5,4,4,5,5,NA,NA,1,NA,NA,NA,NA,NA,3,2,2,2,2,5,"Online","Attractive","Dominant",50
+1,2,1,1,2,3,2,1,1,1,1,2,2,4,3,4,4,3,4,5,5,NA,NA,NA,NA,NA,NA,1,NA,5,2,1,1,6,1,"Online","Attractive","Dominant",51
+2,3,3,2,2,2,2,2,2,1,2,2,3,4,4,2,3,2,2,2,2,1,NA,NA,NA,NA,NA,NA,NA,5,5,4,4,5,3,"Online","Attractive","Not Dominant",52
+1,5,5,5,4,4,4,5,4,5,4,4,5,6,6,3,3,4,4,3,2,NA,NA,NA,NA,NA,NA,NA,1,6,5,4,4,5,1,"Online","Not Attractive","Not Dominant",53
+1,2,2,3,4,5,2,3,3,3,1,1,3,6,6,1,1,1,1,1,1,NA,NA,NA,NA,1,NA,NA,NA,6,3,5,5,6,4,"Online","Attractive","Not Dominant",54
+2,2,2,2,2,3,2,2,2,1,2,2,2,1,1,4,5,5,5,5,5,NA,NA,1,NA,NA,NA,NA,NA,1,1,1,1,1,1,"Online","Attractive","Dominant",55
+2,4,4,3,4,3,3,4,2,4,1,3,3,3,4,4,4,5,4,4,3,NA,1,NA,NA,NA,NA,NA,NA,5,5,5,3,5,3,"Online","Not Attractive","Dominant",56
+2,3,2,2,3,3,2,3,2,2,1,1,1,4,6,2,3,2,2,4,4,1,NA,NA,NA,NA,NA,NA,NA,6,5,5,6,6,4,"Online","Attractive","Not Dominant",57
+2,2,1,1,1,2,1,1,1,1,1,2,2,3,3,4,4,4,4,3,3,NA,NA,NA,1,NA,NA,NA,NA,1,1,1,1,1,1,"Online","Not Attractive","Not Dominant",58
+2,3,4,4,5,4,5,4,4,3,2,4,4,6,4,4,2,3,4,4,3,NA,1,NA,NA,NA,NA,NA,NA,2,2,2,2,2,2,"Online","Not Attractive","Dominant",59
+1,2,2,3,2,2,2,3,3,3,1,2,2,6,6,2,2,2,3,1,4,NA,NA,NA,NA,NA,NA,NA,1,5,5,5,5,5,2,"Online","Not Attractive","Not Dominant",60
+1,5,5,5,5,5,4,4,5,5,4,5,4,4,5,4,4,3,5,2,5,NA,NA,NA,NA,NA,1,NA,NA,4,3,2,1,4,1,"Online","Not Attractive","Dominant",61
+2,4,4,3,3,3,4,4,3,4,4,4,4,5,4,2,2,3,2,2,2,NA,NA,1,NA,NA,NA,NA,NA,3,5,3,5,3,6,"Online","Attractive","Dominant",62
+2,4,4,4,4,3,2,3,4,4,3,2,3,4,5,2,2,3,1,2,2,1,NA,NA,NA,NA,NA,NA,NA,5,5,5,6,5,6,"Online","Attractive","Not Dominant",63
+2,2,2,2,2,3,2,2,2,1,2,3,2,5,5,4,4,4,4,3,3,NA,NA,1,NA,NA,NA,NA,NA,6,6,6,6,6,3,"Online","Attractive","Dominant",64
+2,3,2,2,2,3,5,4,5,1,2,5,5,3,4,3,2,2,2,3,3,NA,NA,NA,1,NA,NA,NA,NA,6,5,5,5,5,4,"Online","Not Attractive","Not Dominant",65
+2,2,2,2,2,3,2,2,3,1,1,2,2,5,5,2,4,4,4,4,1,1,NA,NA,NA,NA,NA,NA,NA,5,5,4,4,5,3,"Online","Attractive","Not Dominant",66
+2,3,3,2,2,2,1,2,2,2,1,2,2,7,7,3,4,4,4,4,2,NA,1,NA,NA,NA,NA,NA,NA,5,6,6,6,6,4,"Online","Not Attractive","Dominant",67
+1,2,2,3,2,4,2,2,4,2,3,2,2,3,3,3,4,4,3,4,4,NA,NA,NA,NA,NA,NA,1,NA,5,4,3,4,5,2,"Online","Attractive","Dominant",68
+2,2,2,3,2,2,2,2,2,1,1,2,2,5,6,2,2,2,2,2,4,NA,NA,NA,1,NA,NA,NA,NA,4,3,2,1,3,1,"Online","Not Attractive","Not Dominant",69
+1,2,3,2,2,3,2,2,3,1,3,2,2,6,5,2,2,2,2,2,2,NA,NA,NA,NA,NA,1,NA,NA,5,2,2,2,2,3,"Online","Not Attractive","Dominant",70
+2,5,5,4,5,5,5,5,4,3,3,4,4,6,5,4,4,5,3,5,3,1,NA,NA,NA,NA,NA,NA,NA,3,5,3,2,5,2,"Online","Attractive","Not Dominant",71
+2,2,2,2,2,2,2,2,2,2,3,2,2,2,2,3,4,3,4,3,4,NA,NA,1,NA,NA,NA,NA,NA,3,3,4,3,3,2,"Online","Attractive","Dominant",72
+2,2,1,1,2,2,1,1,2,1,1,1,1,5,4,1,1,1,1,3,3,NA,NA,NA,1,NA,NA,NA,NA,3,3,3,3,3,3,"Online","Not Attractive","Not Dominant",73
+1,5,4,5,4,4,4,5,5,4,3,5,4,6,7,3,3,2,3,4,3,NA,NA,NA,NA,NA,NA,NA,1,4,5,4,4,4,5,"Online","Not Attractive","Not Dominant",74
+2,2,2,2,2,3,2,2,2,2,2,2,2,5,5,4,4,3,4,5,4,NA,1,NA,NA,NA,NA,NA,NA,6,6,5,6,6,6,"Online","Not Attractive","Dominant",75
+2,5,5,5,5,5,5,5,5,2,2,5,5,1,1,5,5,5,5,5,1,NA,NA,1,NA,NA,NA,NA,NA,1,1,1,1,1,1,"Online","Attractive","Dominant",76
+1,4,4,4,2,3,1,2,3,3,2,3,2,3,3,4,3,2,2,4,2,NA,NA,NA,NA,NA,NA,1,NA,5,6,4,3,6,3,"Online","Attractive","Dominant",77
+2,2,2,2,2,2,2,2,1,2,1,2,2,4,5,2,2,2,2,2,2,1,NA,NA,NA,NA,NA,NA,NA,3,2,2,2,2,1,"Online","Attractive","Not Dominant",78
+2,4,4,5,4,4,2,4,5,4,5,5,5,3,6,2,2,4,2,3,4,NA,NA,NA,1,NA,NA,NA,NA,6,6,6,3,6,5,"Online","Not Attractive","Not Dominant",79
+2,2,2,2,2,2,4,4,5,3,4,4,4,3,6,4,5,5,5,5,3,NA,1,NA,NA,NA,NA,NA,NA,5,5,6,5,5,5,"Online","Not Attractive","Dominant",80
+2,2,1,2,1,2,2,2,1,1,1,2,1,3,4,4,5,2,5,5,4,NA,1,NA,NA,NA,NA,NA,NA,4,5,3,3,5,2,"Online","Not Attractive","Dominant",81
+1,4,4,4,4,4,4,5,3,4,3,4,3,7,7,3,2,1,1,1,1,NA,NA,NA,NA,NA,NA,NA,1,6,6,6,6,6,1,"Online","Not Attractive","Not Dominant",82
+2,2,3,2,2,2,1,3,2,2,2,3,3,4,4,3,5,5,4,4,2,NA,NA,1,NA,NA,NA,NA,NA,4,3,2,2,2,2,"Online","Attractive","Dominant",83
+1,5,3,4,4,4,3,3,2,4,5,5,4,6,6,4,4,3,2,3,3,NA,NA,NA,NA,NA,1,NA,NA,6,4,6,3,3,6,"Online","Not Attractive","Dominant",84
+1,4,3,4,4,4,4,2,5,5,3,4,4,3,5,2,2,3,2,3,3,NA,NA,NA,NA,1,NA,NA,NA,4,4,3,2,4,2,"Online","Attractive","Not Dominant",85
+2,5,5,5,5,5,5,5,5,5,5,5,5,3,1,2,2,1,1,2,3,NA,NA,NA,1,NA,NA,NA,NA,5,1,1,1,1,1,"Online","Not Attractive","Not Dominant",86
+1,4,5,4,5,4,4,3,3,5,4,2,1,5,3,4,5,3,2,4,3,NA,NA,NA,NA,NA,NA,1,NA,1,1,1,1,2,1,"Online","Attractive","Dominant",87
+1,4,3,4,3,3,3,4,4,2,4,4,3,6,3,4,4,3,3,3,4,NA,NA,NA,NA,NA,NA,1,NA,4,4,3,3,4,3,"Online","Attractive","Dominant",88
+1,4,4,4,3,4,4,4,5,3,3,4,4,6,6,3,4,2,4,3,4,NA,NA,NA,NA,NA,NA,NA,1,4,4,3,3,4,2,"Online","Not Attractive","Not Dominant",89
+1,4,4,3,4,4,3,4,5,2,1,3,3,6,5,2,2,1,2,4,1,NA,NA,NA,NA,1,NA,NA,NA,6,5,5,5,5,2,"Online","Attractive","Not Dominant",90
+2,2,2,3,3,4,3,2,3,2,2,1,3,5,4,3,4,2,4,5,4,1,NA,NA,NA,NA,NA,NA,NA,3,5,2,5,5,3,"Online","Attractive","Not Dominant",91
+1,2,2,2,2,2,1,1,1,2,1,2,2,6,6,2,1,2,2,2,3,NA,NA,NA,NA,NA,1,NA,NA,6,6,6,5,6,3,"Online","Not Attractive","Dominant",92
+2,3,3,3,4,2,2,2,3,3,2,2,2,3,5,4,4,2,2,2,2,NA,NA,NA,1,NA,NA,NA,NA,4,4,4,4,4,4,"Online","Not Attractive","Not Dominant",93
+2,3,5,5,5,4,5,5,5,5,5,5,5,3,7,4,5,4,4,5,5,NA,1,NA,NA,NA,NA,NA,NA,5,5,NA,NA,5,4,"Online","Not Attractive","Dominant",94
+1,4,4,4,4,4,4,4,4,3,4,4,4,6,6,4,3,2,3,3,2,NA,NA,NA,NA,NA,NA,NA,1,6,5,4,2,3,2,"Online","Not Attractive","Not Dominant",95
+1,4,5,4,4,2,5,5,5,5,5,5,5,3,5,3,4,3,4,3,4,NA,NA,NA,NA,NA,NA,1,NA,6,6,6,3,6,4,"Online","Attractive","Dominant",96
+2,4,3,5,4,4,3,2,4,2,3,2,2,3,4,1,2,2,2,3,2,1,NA,NA,NA,NA,NA,NA,NA,5,3,3,4,5,5,"Online","Attractive","Not Dominant",97
+1,4,4,5,3,5,4,3,5,3,5,4,4,4,2,2,2,3,4,2,4,NA,NA,NA,NA,1,NA,NA,NA,1,2,2,1,2,1,"Online","Attractive","Not Dominant",98
+2,1,2,2,2,3,2,3,2,2,1,3,3,2,2,4,4,4,4,3,3,NA,NA,1,NA,NA,NA,NA,NA,5,2,2,4,5,1,"Online","Attractive","Dominant",99
+2,2,1,2,2,1,1,1,2,1,2,1,1,5,5,2,2,1,1,3,3,NA,NA,NA,1,NA,NA,NA,NA,5,5,5,5,5,3,"Online","Not Attractive","Not Dominant",100
+1,4,4,3,3,4,2,2,3,2,2,2,2,4,4,2,2,3,3,2,4,NA,NA,NA,NA,NA,1,NA,NA,3,3,3,3,3,2,"Online","Not Attractive","Dominant",101
+2,3,2,3,2,3,1,3,2,4,2,4,3,3,6,4,5,5,4,5,4,NA,NA,1,NA,NA,NA,NA,NA,5,6,5,3,5,2,"Online","Attractive","Dominant",102
+2,2,2,2,2,3,2,2,3,2,1,2,2,4,6,2,3,2,1,2,2,1,NA,NA,NA,NA,NA,NA,NA,5,5,5,5,5,5,"Online","Attractive","Not Dominant",103
+1,5,4,3,5,2,3,3,2,5,2,2,4,4,4,2,2,1,1,1,2,NA,NA,NA,NA,1,NA,NA,NA,4,4,5,2,3,2,"Online","Attractive","Not Dominant",104
+1,3,2,2,1,3,2,2,1,1,1,1,2,4,6,3,3,3,3,3,2,NA,NA,NA,NA,NA,NA,NA,1,5,5,5,5,5,4,"Online","Not Attractive","Not Dominant",105
+1,4,4,3,3,5,4,5,4,5,2,2,2,6,6,4,2,3,4,4,3,NA,NA,NA,NA,NA,1,NA,NA,5,4,4,3,5,3,"Online","Not Attractive","Dominant",106
+1,4,3,5,3,2,3,4,4,5,5,3,2,4,5,4,4,4,4,5,3,NA,NA,NA,NA,NA,NA,1,NA,3,5,5,1,4,1,"Online","Attractive","Dominant",107
+1,3,3,4,3,4,2,3,4,3,3,2,2,3,4,2,2,4,2,4,2,NA,NA,NA,NA,NA,NA,1,NA,6,5,5,6,5,4,"Online","Attractive","Dominant",108
+2,4,3,3,4,5,4,5,4,3,2,4,5,6,3,4,5,4,3,4,3,NA,1,NA,NA,NA,NA,NA,NA,3,2,5,5,5,2,"Online","Not Attractive","Dominant",109
+2,4,4,4,4,4,4,3,4,3,3,3,3,3,5,2,2,2,3,1,3,NA,NA,1,NA,NA,NA,NA,NA,6,5,5,4,5,4,"Online","Attractive","Dominant",110
+2,5,5,5,5,4,5,5,3,5,1,5,5,5,6,3,4,4,5,5,4,NA,1,NA,NA,NA,NA,NA,NA,6,6,7,6,6,6,"Online","Not Attractive","Dominant",111
+2,1,1,2,2,3,3,5,1,4,4,4,4,4,2,1,2,3,4,5,1,NA,NA,NA,1,NA,NA,NA,NA,2,3,3,2,2,4,"Online","Not Attractive","Not Dominant",112
+2,4,4,4,2,4,3,4,4,3,2,4,4,3,5,2,3,2,2,3,3,NA,NA,NA,1,NA,NA,NA,NA,5,5,5,6,5,5,"Online","Not Attractive","Not Dominant",113
+2,3,4,3,3,4,3,5,3,3,3,4,4,4,4,3,2,2,2,2,2,1,NA,NA,NA,NA,NA,NA,NA,5,4,4,4,4,4,"Online","Attractive","Not Dominant",114
+2,1,2,1,1,4,2,1,2,1,1,1,1,6,7,4,2,2,4,2,5,NA,1,NA,NA,NA,NA,NA,NA,7,7,7,7,7,7,"Online","Not Attractive","Dominant",115
+2,2,1,2,1,2,1,1,2,1,2,1,1,2,4,4,5,5,5,5,5,NA,NA,1,NA,NA,NA,NA,NA,3,5,5,5,5,6,"Online","Attractive","Dominant",116
+1,4,3,4,3,1,3,3,4,2,2,2,2,4,5,4,4,3,3,2,2,NA,NA,NA,NA,1,NA,NA,NA,4,5,4,2,4,1,"Online","Attractive","Not Dominant",117
+2,3,3,3,3,3,3,3,3,3,3,3,3,4,3,4,4,4,4,4,4,NA,NA,1,NA,NA,NA,NA,NA,3,2,2,2,2,2,"Online","Attractive","Dominant",118
+2,4,5,5,3,5,5,5,5,4,4,5,4,2,4,4,4,4,4,4,3,1,NA,NA,NA,NA,NA,NA,NA,5,4,2,2,5,3,"Online","Attractive","Not Dominant",119
+2,2,1,2,2,1,1,2,3,4,1,3,3,7,7,1,3,2,2,2,4,NA,1,NA,NA,NA,NA,NA,NA,3,5,3,3,5,2,"Online","Not Attractive","Dominant",120
+2,3,4,3,4,3,3,4,2,4,2,3,3,5,5,2,2,2,2,2,4,NA,NA,NA,1,NA,NA,NA,NA,4,3,5,3,5,5,"Online","Not Attractive","Not Dominant",121
+2,4,3,3,3,5,4,3,4,5,3,3,3,6,5,4,4,4,2,2,2,1,NA,NA,NA,NA,NA,NA,NA,5,5,6,6,5,7,"Online","Attractive","Not Dominant",122
+2,3,3,2,3,3,2,4,3,3,2,3,3,3,4,2,2,3,2,3,2,1,NA,NA,NA,NA,NA,NA,NA,5,2,2,1,2,5,"Online","Attractive","Not Dominant",123
+2,5,4,4,4,5,3,4,4,5,4,5,5,6,6,4,4,5,5,4,5,NA,1,NA,NA,NA,NA,NA,NA,5,4,5,5,6,6,"Online","Not Attractive","Dominant",124
+1,4,5,3,2,3,5,3,2,3,5,3,1,6,3,5,3,1,4,3,5,NA,NA,NA,NA,NA,NA,NA,1,2,6,4,3,6,5,"Online","Not Attractive","Not Dominant",125
+1,1,1,1,1,2,1,1,2,1,1,1,1,3,1,3,3,3,3,3,4,NA,NA,NA,NA,NA,1,NA,NA,2,2,2,2,2,1,"Online","Not Attractive","Dominant",126
+1,5,5,5,5,5,4,4,4,3,3,4,4,3,7,4,4,2,2,4,4,NA,NA,NA,NA,NA,NA,1,NA,6,6,5,4,5,4,"Online","Attractive","Dominant",127
+2,4,4,4,4,5,4,4,4,4,2,4,4,6,5,3,3,2,2,2,2,NA,NA,NA,1,NA,NA,NA,NA,4,2,4,5,5,4,"Online","Not Attractive","Not Dominant",128
+2,4,3,3,3,3,2,4,3,1,3,3,4,2,2,5,5,4,4,5,4,NA,NA,1,NA,NA,NA,NA,NA,2,2,2,2,3,2,"Online","Attractive","Dominant",129
+2,3,2,2,2,2,2,2,2,1,2,1,2,3,4,4,4,4,4,4,3,NA,NA,1,NA,NA,NA,NA,NA,3,4,2,2,4,4,"Online","Attractive","Dominant",130
+1,5,4,5,4,3,5,5,5,2,1,4,5,5,2,3,5,4,4,5,2,NA,NA,NA,NA,1,NA,NA,NA,1,1,1,1,1,2,"Online","Attractive","Not Dominant",131
+2,4,4,5,5,5,4,5,4,5,5,5,5,3,3,4,2,5,3,3,2,1,NA,NA,NA,NA,NA,NA,NA,4,5,4,5,4,5,"Online","Attractive","Not Dominant",132
+2,3,4,3,4,4,1,2,1,4,1,3,4,6,2,3,2,2,1,3,2,NA,NA,NA,1,NA,NA,NA,NA,5,5,5,4,5,4,"Online","Not Attractive","Not Dominant",133
+2,3,2,2,2,4,2,2,4,2,2,2,2,6,3,5,5,5,4,5,5,NA,NA,1,NA,NA,NA,NA,NA,1,1,1,1,1,1,"Online","Attractive","Dominant",134
+2,5,3,4,4,3,2,2,3,5,3,2,2,7,6,2,2,4,2,4,4,NA,1,NA,NA,NA,NA,NA,NA,6,6,6,5,6,5,"Online","Not Attractive","Dominant",135
+2,1,4,1,1,4,4,5,2,2,1,2,2,4,4,3,5,5,5,5,5,NA,1,NA,NA,NA,NA,NA,NA,4,4,4,3,4,2,"Online","Not Attractive","Dominant",136
+1,3,2,3,3,2,3,3,3,3,2,1,3,6,7,4,3,3,3,2,2,NA,NA,NA,NA,NA,NA,NA,1,5,7,5,5,6,4,"Online","Not Attractive","Not Dominant",137
+2,4,3,4,4,4,3,4,4,3,4,5,5,4,5,3,2,1,2,2,3,NA,NA,NA,1,NA,NA,NA,NA,3,3,2,2,4,2,"Online","Not Attractive","Not Dominant",138
+2,2,1,2,1,1,1,1,1,1,1,1,1,4,6,3,3,3,2,2,4,NA,NA,NA,1,NA,NA,NA,NA,6,6,6,7,6,7,"Online","Not Attractive","Not Dominant",139
+2,4,4,5,4,4,5,5,5,3,5,5,5,5,5,4,4,3,3,2,4,1,NA,NA,NA,NA,NA,NA,NA,3,5,5,5,5,3,"Online","Attractive","Not Dominant",140
+2,4,4,4,3,5,5,5,4,2,3,5,5,4,6,4,1,2,3,4,5,NA,NA,1,NA,NA,NA,NA,NA,6,7,7,1,6,7,"Online","Attractive","Dominant",141
+2,2,2,2,2,2,2,2,2,1,1,1,1,5,6,4,4,4,3,4,4,NA,1,NA,NA,NA,NA,NA,NA,3,4,5,5,4,3,"Online","Not Attractive","Dominant",142
+2,2,2,2,2,2,2,2,2,2,2,2,2,7,6,2,4,4,2,4,3,1,NA,NA,NA,NA,NA,NA,NA,6,6,6,6,6,6,"Online","Attractive","Not Dominant",143
+2,5,4,5,4,4,4,4,4,4,3,4,5,4,2,3,4,2,3,3,3,1,NA,NA,NA,NA,NA,NA,NA,3,2,2,1,2,1,"Online","Attractive","Not Dominant",144
+1,4,2,1,4,2,1,1,2,1,1,3,2,4,5,2,2,2,3,3,2,NA,NA,NA,NA,NA,NA,1,NA,5,4,1,5,5,4,"Online","Attractive","Dominant",145
+2,4,4,3,2,4,3,3,3,4,2,3,3,4,5,3,2,4,3,3,4,NA,1,NA,NA,NA,NA,NA,NA,4,2,2,2,4,3,"Online","Not Attractive","Dominant",146
+2,3,3,3,3,4,3,4,3,4,3,3,3,4,4,4,4,4,4,4,4,NA,NA,1,NA,NA,NA,NA,NA,5,5,5,4,5,1,"Online","Attractive","Dominant",147
+1,3,2,2,3,3,2,3,2,4,3,3,2,7,5,4,4,3,3,4,5,NA,NA,NA,NA,NA,1,NA,NA,5,5,6,6,6,6,"Online","Not Attractive","Dominant",148
+2,2,2,2,2,2,2,2,2,2,2,2,2,3,4,4,4,3,3,5,5,NA,1,NA,NA,NA,NA,NA,NA,6,4,5,6,6,6,"Online","Not Attractive","Dominant",149
+2,4,5,4,3,5,3,5,4,2,4,4,5,4,4,3,3,2,3,3,2,NA,NA,NA,1,NA,NA,NA,NA,4,3,2,2,4,1,"Online","Not Attractive","Not Dominant",150
+1,4,3,2,2,2,2,2,3,3,2,3,2,7,6,3,2,2,2,2,2,NA,NA,NA,NA,NA,NA,NA,1,3,2,2,1,2,1,"Online","Not Attractive","Not Dominant",151
+2,5,5,4,5,5,5,5,5,5,4,3,4,1,4,2,2,2,2,3,3,1,NA,NA,NA,NA,NA,NA,NA,5,5,3,3,5,6,"Online","Attractive","Not Dominant",152
+2,4,3,5,3,5,4,4,3,5,5,4,5,4,4,4,5,2,3,3,4,NA,NA,1,NA,NA,NA,NA,NA,2,4,2,4,2,1,"Online","Attractive","Dominant",153
+2,3,2,4,2,3,5,4,5,3,3,5,5,5,6,3,3,3,3,3,3,NA,NA,1,NA,NA,NA,NA,NA,5,6,6,5,6,4,"Online","Attractive","Dominant",154
+2,1,1,2,2,2,2,2,3,2,2,2,2,5,4,4,5,3,4,4,3,NA,1,NA,NA,NA,NA,NA,NA,3,3,3,2,2,2,"Online","Not Attractive","Dominant",155
+1,2,1,1,1,2,1,1,2,1,1,2,1,3,4,4,4,2,3,3,4,NA,NA,NA,NA,1,NA,NA,NA,5,4,5,2,4,1,"Online","Attractive","Not Dominant",156
+2,4,4,5,5,3,5,2,4,5,2,2,5,5,3,2,2,2,4,4,2,1,NA,NA,NA,NA,NA,NA,NA,2,5,2,2,5,2,"Online","Attractive","Not Dominant",157
+2,5,5,5,5,5,5,5,5,5,5,5,5,7,7,3,4,4,2,4,3,NA,1,NA,NA,NA,NA,NA,NA,6,5,5,4,5,4,"Online","Not Attractive","Dominant",158
+2,2,1,2,1,2,1,1,2,1,3,1,1,6,7,2,3,2,2,2,3,NA,NA,NA,1,NA,NA,NA,NA,5,7,5,6,6,7,"Online","Not Attractive","Not Dominant",159
+2,4,4,3,4,3,2,2,2,2,3,2,2,6,6,4,4,4,4,4,3,NA,NA,1,NA,NA,NA,NA,NA,5,4,5,4,4,4,"Online","Attractive","Dominant",160
+1,5,5,5,5,5,5,5,5,5,5,5,5,6,7,2,4,3,2,2,2,NA,NA,NA,NA,NA,NA,NA,1,6,5,2,2,5,2,"Online","Not Attractive","Not Dominant",161
+2,2,3,3,3,3,3,3,3,3,3,3,3,3,4,2,2,2,3,3,2,1,NA,NA,NA,NA,NA,NA,NA,4,4,4,4,4,4,"Online","Attractive","Not Dominant",162
+2,4,4,4,4,4,4,4,5,5,4,5,5,6,3,4,4,4,3,3,4,NA,NA,NA,1,NA,NA,NA,NA,5,5,4,4,5,4,"Online","Not Attractive","Not Dominant",163
+1,1,2,2,1,2,2,2,2,2,1,2,2,3,4,4,4,4,3,4,4,NA,NA,NA,NA,1,NA,NA,NA,5,6,6,5,6,2,"Online","Attractive","Not Dominant",164
+2,2,2,2,2,3,2,2,2,3,1,2,3,5,5,4,4,2,3,4,4,NA,1,NA,NA,NA,NA,NA,NA,5,4,5,3,5,1,"Online","Not Attractive","Dominant",165
+2,2,1,2,1,2,1,1,2,1,1,1,1,4,3,3,2,2,2,3,4,NA,NA,NA,1,NA,NA,NA,NA,4,5,4,1,5,2,"Online","Not Attractive","Not Dominant",166
+1,5,5,5,5,5,5,5,5,4,5,5,5,5,5,4,2,3,3,4,3,NA,NA,NA,NA,NA,1,NA,NA,3,2,2,2,2,2,"Online","Not Attractive","Dominant",167
+1,3,1,2,4,5,5,4,4,3,2,1,4,5,4,5,5,5,5,4,5,NA,NA,NA,NA,NA,1,NA,NA,4,1,1,7,4,4,"Online","Not Attractive","Dominant",168
+1,2,1,1,1,1,1,1,1,1,1,1,1,4,5,4,4,2,2,1,3,NA,NA,NA,NA,1,NA,NA,NA,5,4,3,5,5,1,"Online","Attractive","Not Dominant",169
+1,5,4,4,4,4,1,4,4,4,1,2,2,5,5,1,1,1,2,2,1,NA,NA,NA,NA,NA,NA,NA,1,6,5,5,6,6,4,"Online","Not Attractive","Not Dominant",170
+2,2,2,3,2,3,2,3,4,2,2,4,4,3,5,4,4,4,4,4,4,NA,NA,1,NA,NA,NA,NA,NA,4,4,3,3,5,3,"Online","Attractive","Dominant",171
+2,4,2,3,2,2,2,2,3,2,1,2,2,6,7,3,2,2,4,3,4,1,NA,NA,NA,NA,NA,NA,NA,3,5,6,5,5,1,"Online","Attractive","Not Dominant",172
+1,3,4,5,3,5,5,4,5,5,5,5,4,3,2,5,5,4,5,5,3,NA,NA,NA,NA,NA,NA,1,NA,1,1,1,1,1,1,"Online","Attractive","Dominant",173
+2,4,3,4,4,3,4,5,2,2,2,3,5,5,5,5,4,2,2,1,3,NA,1,NA,NA,NA,NA,NA,NA,4,5,5,2,5,2,"Online","Not Attractive","Dominant",174
+2,4,4,4,4,4,4,4,4,4,4,4,4,6,6,4,4,4,4,4,4,NA,NA,NA,1,NA,NA,NA,NA,4,4,4,6,5,2,"Online","Not Attractive","Not Dominant",175
+2,4,4,4,4,5,4,4,5,5,3,4,4,6,6,2,2,2,2,2,2,NA,NA,NA,1,NA,NA,NA,NA,5,6,5,4,5,2,"Online","Not Attractive","Not Dominant",176
+2,5,4,5,5,5,4,3,5,5,5,1,1,2,1,5,4,3,5,5,4,NA,NA,1,NA,NA,NA,NA,NA,1,1,1,1,1,1,"Online","Attractive","Dominant",177
+1,3,2,3,2,4,2,3,4,2,3,2,3,6,6,2,2,2,3,2,3,NA,NA,NA,NA,NA,NA,NA,1,3,4,4,4,5,6,"Online","Not Attractive","Not Dominant",178
+2,2,2,2,2,2,1,2,1,2,2,2,2,4,4,2,1,2,1,1,1,1,NA,NA,NA,NA,NA,NA,NA,5,4,4,2,5,4,"Online","Attractive","Not Dominant",179
+2,4,3,3,3,3,2,4,5,1,5,2,5,3,2,4,4,3,5,5,3,NA,NA,1,NA,NA,NA,NA,NA,2,2,2,1,3,1,"Online","Attractive","Dominant",180
+1,3,2,2,3,3,2,2,2,2,2,2,2,5,3,4,4,4,5,4,4,NA,NA,NA,NA,NA,1,NA,NA,5,4,4,4,4,3,"Online","Not Attractive","Dominant",181
+2,5,4,4,4,4,5,5,5,2,4,4,4,6,5,2,1,1,2,2,1,1,NA,NA,NA,NA,NA,NA,NA,1,2,1,2,2,4,"Online","Attractive","Not Dominant",182
+1,5,5,5,5,5,5,5,5,4,5,5,5,6,6,4,5,5,5,5,5,NA,NA,NA,NA,NA,1,NA,NA,4,5,4,4,4,2,"Online","Not Attractive","Dominant",183
+1,3,2,2,3,3,4,3,4,2,3,3,3,3,2,4,3,3,4,4,4,NA,NA,NA,NA,1,NA,NA,NA,2,2,2,1,2,1,"Online","Attractive","Not Dominant",184
+2,5,5,5,5,4,5,5,5,4,4,5,5,5,6,2,2,1,3,2,2,NA,NA,NA,1,NA,NA,NA,NA,5,6,5,2,5,2,"Online","Not Attractive","Not Dominant",185
+2,5,5,5,5,5,5,5,5,5,5,5,5,3,2,5,5,5,5,5,5,NA,1,NA,NA,NA,NA,NA,NA,5,5,6,6,5,5,"Online","Not Attractive","Dominant",186
+1,3,1,2,2,2,1,2,2,2,2,1,1,3,5,3,2,2,3,3,3,NA,NA,NA,NA,NA,NA,1,NA,5,5,5,5,5,5,"Online","Attractive","Dominant",187
+2,4,4,4,4,5,5,5,4,4,3,5,5,2,4,4,4,3,4,4,4,1,NA,NA,NA,NA,NA,NA,NA,2,5,2,1,4,2,"Online","Attractive","Not Dominant",188
+2,3,2,2,2,3,3,3,4,4,2,4,4,5,5,1,1,1,1,1,1,NA,NA,NA,1,NA,NA,NA,NA,5,4,2,1,4,1,"Online","Not Attractive","Not Dominant",189
+1,2,1,2,2,2,1,1,2,1,2,2,2,3,2,4,4,4,5,5,4,NA,NA,NA,NA,NA,NA,1,NA,4,3,2,2,4,1,"Online","Attractive","Dominant",190
+1,5,3,2,3,1,2,2,3,2,1,2,2,6,7,1,4,4,2,3,1,NA,NA,NA,NA,NA,NA,NA,1,5,5,5,4,4,1,"Online","Not Attractive","Not Dominant",191
+2,4,3,3,3,4,3,3,4,1,3,2,3,3,5,5,5,5,4,4,5,NA,NA,1,NA,NA,NA,NA,NA,4,5,3,5,5,5,"Online","Attractive","Dominant",192
+1,4,4,5,5,5,2,5,5,5,4,5,5,4,4,4,3,2,2,2,3,NA,NA,NA,NA,1,NA,NA,NA,6,6,6,2,6,2,"Online","Attractive","Not Dominant",193
+2,4,3,4,3,4,3,4,3,2,3,2,3,6,6,3,2,1,3,2,3,NA,1,NA,NA,NA,NA,NA,NA,6,5,6,5,6,6,"Online","Not Attractive","Dominant",194
+2,3,3,2,2,3,1,2,3,3,1,2,2,4,4,4,4,4,3,2,2,1,NA,NA,NA,NA,NA,NA,NA,4,3,3,1,3,1,"Online","Attractive","Not Dominant",195
+2,2,2,3,3,4,2,3,4,2,3,2,3,3,2,5,5,5,5,5,4,NA,NA,1,NA,NA,NA,NA,NA,5,4,4,2,5,3,"Online","Attractive","Dominant",196
+1,4,3,5,4,5,5,3,5,1,5,2,3,6,3,2,1,3,3,5,1,NA,NA,NA,NA,NA,1,NA,NA,1,2,1,1,1,1,"Online","Not Attractive","Dominant",197
+2,2,2,2,2,2,2,2,2,3,2,2,2,5,5,3,2,4,4,4,4,NA,NA,NA,1,NA,NA,NA,NA,5,4,3,2,4,2,"Online","Not Attractive","Not Dominant",198
+1,3,2,2,2,3,1,2,2,3,2,2,3,6,6,3,4,4,2,2,3,NA,NA,NA,NA,NA,NA,NA,1,5,5,5,5,5,5,"Online","Not Attractive","Not Dominant",199
+2,4,3,4,2,5,3,3,4,3,5,3,4,6,6,5,5,3,4,5,5,NA,1,NA,NA,NA,NA,NA,NA,3,5,5,5,5,3,"Online","Not Attractive","Dominant",200
+1,4,2,1,5,3,3,3,1,5,1,1,3,5,6,2,4,5,2,4,2,NA,NA,NA,NA,NA,1,NA,NA,5,5,6,5,5,2,"Online","Not Attractive","Dominant",201
+1,3,3,3,3,4,4,4,5,3,4,3,4,2,5,4,4,3,5,4,4,NA,NA,NA,NA,NA,NA,1,NA,6,5,5,5,6,5,"Online","Attractive","Dominant",202
+2,2,3,2,2,2,2,2,2,3,1,2,1,5,5,4,4,4,2,4,4,NA,1,NA,NA,NA,NA,NA,NA,6,6,5,4,6,5,"Online","Not Attractive","Dominant",203
+2,5,4,5,5,4,5,5,4,4,4,5,5,6,6,2,3,4,2,4,2,NA,NA,NA,1,NA,NA,NA,NA,7,7,7,7,7,7,"Online","Not Attractive","Not Dominant",204
+2,5,5,4,5,5,4,5,5,4,5,4,4,3,2,4,4,3,4,3,3,1,NA,NA,NA,NA,NA,NA,NA,3,3,3,2,3,2,"Online","Attractive","Not Dominant",205
+2,2,3,1,1,2,2,2,1,2,1,2,2,3,5,3,3,3,3,3,3,NA,NA,1,NA,NA,NA,NA,NA,4,3,5,5,5,1,"Online","Attractive","Dominant",206
+2,2,1,1,1,1,1,1,1,1,1,1,1,5,6,3,2,2,2,2,2,NA,NA,NA,1,NA,NA,NA,NA,5,5,5,5,5,2,"Online","Not Attractive","Not Dominant",207
+2,4,3,4,4,4,4,5,5,4,4,5,5,5,6,4,4,4,4,3,3,NA,NA,1,NA,NA,NA,NA,NA,5,5,5,5,5,3,"Online","Attractive","Dominant",208
+1,3,5,4,4,3,4,4,3,4,1,3,3,5,5,4,3,3,3,4,4,NA,NA,NA,NA,1,NA,NA,NA,4,4,5,4,6,4,"Online","Attractive","Not Dominant",209
+2,3,2,2,2,2,2,2,2,1,2,2,2,6,5,4,4,5,3,4,3,NA,1,NA,NA,NA,NA,NA,NA,2,2,2,2,2,2,"Online","Not Attractive","Dominant",210
+2,4,5,4,5,5,5,5,5,3,5,5,5,3,4,2,2,1,1,4,2,1,NA,NA,NA,NA,NA,NA,NA,3,1,2,5,5,6,"Online","Attractive","Not Dominant",211
+1,2,4,4,3,4,4,4,4,4,4,4,4,6,6,1,1,1,1,2,2,NA,NA,NA,NA,NA,NA,NA,1,4,4,4,3,4,3,"Online","Not Attractive","Not Dominant",212
+1,5,4,5,4,3,3,3,5,5,3,2,3,6,5,4,4,3,3,2,3,NA,NA,NA,NA,NA,NA,NA,1,2,2,1,1,2,1,"Online","Not Attractive","Not Dominant",213
+2,5,4,5,3,5,1,5,1,5,1,4,5,5,7,5,5,5,4,3,1,NA,1,NA,NA,NA,NA,NA,NA,7,7,7,7,7,7,"Online","Not Attractive","Dominant",214
+2,4,5,4,5,4,5,5,3,4,3,4,4,4,4,4,3,2,4,3,3,NA,NA,NA,1,NA,NA,NA,NA,3,4,5,5,4,5,"Online","Not Attractive","Not Dominant",215
+1,4,2,4,3,2,2,3,4,2,3,4,3,6,6,4,5,5,5,5,4,NA,NA,NA,NA,NA,1,NA,NA,6,6,6,6,6,6,"Online","Not Attractive","Dominant",216
+2,3,4,3,3,5,4,4,4,4,4,4,4,3,5,5,5,5,5,5,5,NA,NA,1,NA,NA,NA,NA,NA,5,5,5,5,5,5,"Online","Attractive","Dominant",217
+2,2,2,2,2,1,1,1,1,2,1,1,1,6,7,2,4,2,2,2,2,1,NA,NA,NA,NA,NA,NA,NA,5,4,4,1,4,1,"Online","Attractive","Not Dominant",218
+2,5,3,3,3,3,2,4,4,2,2,4,4,5,5,3,2,4,2,4,2,NA,NA,1,NA,NA,NA,NA,NA,4,5,2,2,4,4,"Online","Attractive","Dominant",219
+2,3,2,2,2,3,2,3,2,2,3,2,2,6,6,3,3,3,3,3,3,NA,1,NA,NA,NA,NA,NA,NA,3,6,2,2,5,5,"Online","Not Attractive","Dominant",220
+2,3,2,4,4,3,2,3,4,2,4,2,2,6,6,2,2,2,2,4,3,NA,NA,NA,1,NA,NA,NA,NA,5,6,5,6,6,6,"Online","Not Attractive","Not Dominant",221
+1,5,4,5,4,5,4,5,5,4,5,5,5,6,5,4,5,3,4,5,2,NA,NA,NA,NA,NA,NA,1,NA,2,1,2,2,5,2,"Online","Attractive","Dominant",222
+1,2,2,2,2,4,2,3,4,1,3,2,2,5,6,4,4,4,2,4,2,NA,NA,NA,NA,1,NA,NA,NA,3,3,2,3,3,2,"Online","Attractive","Not Dominant",223
+1,2,1,2,1,1,1,1,1,1,1,1,1,6,7,1,3,1,3,3,3,NA,NA,NA,NA,NA,1,NA,NA,7,7,6,3,6,6,"Online","Not Attractive","Dominant",224
+2,3,3,3,4,4,4,2,2,4,1,2,2,3,6,3,2,2,2,3,3,1,NA,NA,NA,NA,NA,NA,NA,6,6,6,6,6,6,"Online","Attractive","Not Dominant",225
+1,2,2,1,2,3,1,2,2,2,1,1,2,6,6,1,1,1,1,3,3,NA,NA,NA,NA,NA,NA,NA,1,4,5,4,2,4,2,"Online","Not Attractive","Not Dominant",226
+2,1,1,1,1,1,1,1,1,1,1,1,1,7,7,1,1,1,1,1,1,NA,NA,NA,1,NA,NA,NA,NA,7,7,7,7,7,7,"Online","Not Attractive","Not Dominant",227
+2,2,4,3,2,5,4,5,5,2,4,5,5,3,2,5,5,5,5,5,3,NA,NA,1,NA,NA,NA,NA,NA,2,2,1,1,1,1,"Online","Attractive","Dominant",228
+2,2,1,1,1,2,1,1,1,1,2,1,1,3,4,2,4,3,3,4,4,1,NA,NA,NA,NA,NA,NA,NA,5,5,5,5,5,4,"Online","Attractive","Not Dominant",229
+2,5,5,4,4,5,5,5,4,4,3,5,5,3,6,5,4,4,4,4,2,NA,1,NA,NA,NA,NA,NA,NA,5,6,6,5,6,3,"Online","Not Attractive","Dominant",230
+2,4,4,4,4,4,3,4,3,5,4,3,4,4,4,3,3,3,3,3,3,NA,NA,1,NA,NA,NA,NA,NA,4,4,4,4,4,4,"Online","Attractive","Dominant",231
+2,3,3,2,4,3,4,3,4,3,3,4,4,2,4,3,3,3,3,3,3,1,NA,NA,NA,NA,NA,NA,NA,4,3,4,4,4,2,"Online","Attractive","Not Dominant",232
+1,4,3,2,3,2,3,2,3,4,3,3,2,5,5,2,4,3,2,4,3,NA,NA,NA,NA,1,NA,NA,NA,6,5,4,4,5,2,"Online","Attractive","Not Dominant",233
+2,5,5,5,5,5,5,5,3,4,1,5,5,3,4,1,2,1,1,3,1,NA,NA,NA,1,NA,NA,NA,NA,3,1,1,1,4,1,"Online","Not Attractive","Not Dominant",234
+2,3,3,4,3,4,4,4,5,3,3,4,4,5,5,5,5,4,3,4,3,NA,1,NA,NA,NA,NA,NA,NA,5,3,4,4,5,2,"Online","Not Attractive","Dominant",235
+2,2,2,1,1,1,1,1,2,1,1,1,1,3,5,4,4,4,5,4,2,1,NA,NA,NA,NA,NA,NA,NA,5,5,6,6,6,6,"Online","Attractive","Not Dominant",236
+2,4,4,4,3,3,4,4,5,3,4,5,4,5,5,2,2,5,5,5,5,NA,1,NA,NA,NA,NA,NA,NA,2,2,4,3,3,1,"Online","Not Attractive","Dominant",237
+1,4,5,4,4,5,3,5,5,3,3,5,4,4,6,2,2,2,2,1,2,NA,NA,NA,NA,NA,NA,1,NA,5,5,3,3,4,3,"Online","Attractive","Dominant",238
+1,3,2,2,2,2,2,2,2,1,2,1,2,4,6,4,4,4,3,3,3,NA,NA,NA,NA,NA,1,NA,NA,6,6,6,6,6,4,"Online","Not Attractive","Dominant",239
+2,3,4,3,3,3,3,3,3,4,3,3,3,5,6,4,4,4,4,4,4,NA,NA,1,NA,NA,NA,NA,NA,4,5,4,6,5,7,"Online","Attractive","Dominant",240
+2,4,3,3,3,4,3,4,4,3,3,5,4,4,5,3,4,4,4,4,4,NA,NA,1,NA,NA,NA,NA,NA,5,6,5,4,5,5,"Online","Attractive","Dominant",241
+2,2,2,2,2,3,3,3,3,3,3,3,3,2,2,2,2,4,2,4,3,1,NA,NA,NA,NA,NA,NA,NA,5,5,4,5,5,5,"Online","Attractive","Not Dominant",242
+2,4,4,5,4,5,5,5,5,3,3,5,5,2,2,4,5,5,5,5,5,NA,1,NA,NA,NA,NA,NA,NA,5,3,4,2,4,5,"Online","Not Attractive","Dominant",243
+2,1,2,1,1,1,1,1,1,2,1,1,1,7,5,3,3,3,3,3,3,NA,NA,NA,1,NA,NA,NA,NA,3,3,3,3,3,3,"Online","Not Attractive","Not Dominant",244
+2,2,2,2,2,2,1,2,1,2,1,2,2,5,5,3,4,3,3,4,3,NA,NA,NA,1,NA,NA,NA,NA,3,4,4,2,4,2,"Online","Not Attractive","Not Dominant",245
+1,5,4,4,5,5,3,4,4,4,3,3,4,4,5,2,2,2,1,3,2,NA,NA,NA,NA,NA,NA,NA,1,2,3,2,2,3,2,"Online","Not Attractive","Not Dominant",246
+2,2,2,2,3,3,1,2,4,2,2,2,3,5,4,5,5,5,5,5,2,NA,1,NA,NA,NA,NA,NA,NA,1,1,1,1,1,4,"Online","Not Attractive","Dominant",247
+1,3,3,3,2,2,4,3,3,3,2,4,3,5,5,1,1,1,2,2,3,NA,NA,NA,NA,1,NA,NA,NA,4,4,5,3,4,2,"Online","Attractive","Not Dominant",248
+1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,2,4,4,4,4,4,NA,NA,NA,NA,NA,NA,1,NA,5,5,5,3,3,2,"Online","Attractive","Dominant",249
+2,4,5,4,4,3,5,5,5,1,4,4,5,2,4,5,5,5,5,5,4,NA,NA,1,NA,NA,NA,NA,NA,5,6,4,3,5,1,"Online","Attractive","Dominant",250
+2,4,4,4,3,4,4,4,4,4,4,4,4,5,6,3,4,3,3,3,3,1,NA,NA,NA,NA,NA,NA,NA,5,5,5,5,5,2,"Online","Attractive","Not Dominant",251
+1,2,2,1,1,2,2,2,2,2,1,1,1,5,4,3,4,4,4,4,4,NA,NA,NA,NA,NA,NA,1,NA,5,3,3,2,3,3,"Online","Attractive","Dominant",252
+1,2,1,2,1,2,1,1,2,1,2,1,1,5,5,4,4,4,4,4,4,NA,NA,NA,NA,NA,1,NA,NA,5,5,3,3,5,4,"Online","Not Attractive","Dominant",253
+2,3,2,2,2,2,2,2,1,2,2,2,1,4,5,3,3,2,3,3,3,NA,1,NA,NA,NA,NA,NA,NA,3,3,3,3,3,3,"Online","Not Attractive","Dominant",254
+2,4,3,2,2,4,2,2,2,2,1,1,1,6,6,3,2,2,2,2,3,NA,NA,NA,1,NA,NA,NA,NA,2,2,2,2,3,4,"Online","Not Attractive","Not Dominant",255
+1,2,2,3,2,3,2,3,4,2,3,3,3,7,2,3,2,2,2,3,2,NA,NA,NA,NA,NA,NA,NA,1,3,3,5,2,2,2,"Online","Not Attractive","Not Dominant",256
+2,2,2,1,1,2,1,2,2,1,2,1,1,4,2,3,4,5,4,5,2,NA,NA,1,NA,NA,NA,NA,NA,1,1,1,1,1,1,"Online","Attractive","Dominant",257
+1,4,3,3,3,4,4,3,5,2,2,4,4,2,2,3,4,3,5,3,3,NA,NA,NA,NA,1,NA,NA,NA,4,5,2,5,5,2,"Online","Attractive","Not Dominant",258
+2,4,4,5,4,5,4,5,5,5,4,5,5,6,6,1,2,1,1,2,3,NA,NA,NA,1,NA,NA,NA,NA,4,2,2,2,2,1,"Online","Not Attractive","Not Dominant",259
+2,3,3,2,2,2,2,2,2,2,2,2,3,6,6,4,2,2,4,2,2,NA,1,NA,NA,NA,NA,NA,NA,7,7,6,6,6,7,"Online","Not Attractive","Dominant",260
+2,4,3,4,3,4,4,4,5,3,3,2,4,3,6,3,3,3,3,3,3,1,NA,NA,NA,NA,NA,NA,NA,3,2,3,3,2,1,"Online","Attractive","Not Dominant",261
+2,3,3,2,2,3,2,4,2,4,2,3,3,2,3,4,4,5,4,5,3,NA,NA,1,NA,NA,NA,NA,NA,5,5,3,5,3,3,"Online","Attractive","Dominant",262
+1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,NA,NA,NA,NA,NA,1,NA,NA,5,5,5,3,4,3,"Online","Not Attractive","Dominant",263
+2,3,2,3,2,2,3,2,2,2,2,2,2,2,1,4,4,4,3,4,3,NA,NA,1,NA,NA,NA,NA,NA,2,3,2,2,2,4,"Online","Attractive","Dominant",264
+2,5,4,4,3,5,4,5,5,5,4,5,5,5,6,4,4,4,4,4,4,NA,1,NA,NA,NA,NA,NA,NA,5,6,6,5,6,6,"Online","Not Attractive","Dominant",265
+2,4,2,3,2,4,3,3,3,2,2,2,2,3,4,3,2,2,2,4,3,1,NA,NA,NA,NA,NA,NA,NA,6,6,6,6,6,6,"Online","Attractive","Not Dominant",266
+2,4,4,4,4,5,4,4,4,3,4,4,3,2,2,3,2,2,3,3,2,NA,NA,NA,1,NA,NA,NA,NA,3,3,2,2,3,1,"Online","Not Attractive","Not Dominant",267
+1,4,2,2,2,2,1,1,2,1,1,2,1,3,5,4,4,4,3,5,3,NA,NA,NA,NA,1,NA,NA,NA,4,4,2,1,4,1,"Online","Attractive","Not Dominant",268
+1,1,1,1,1,1,1,1,1,1,1,1,1,7,7,1,1,1,1,1,1,NA,NA,NA,NA,NA,NA,NA,1,7,5,5,6,6,6,"Online","Not Attractive","Not Dominant",269
+1,4,4,4,4,4,4,4,4,4,2,2,2,4,4,5,5,5,2,4,2,NA,NA,NA,NA,NA,NA,1,NA,3,3,2,2,5,2,"Online","Attractive","Dominant",270
+2,5,5,5,5,5,5,5,5,5,2,3,3,6,5,4,4,3,3,4,5,NA,NA,1,NA,NA,NA,NA,NA,5,4,5,4,5,6,"Online","Attractive","Dominant",271
+1,2,2,1,1,1,1,1,2,2,1,1,2,5,6,4,4,4,5,4,3,NA,NA,NA,NA,NA,1,NA,NA,5,5,5,5,5,5,"Online","Not Attractive","Dominant",272
+1,3,2,5,2,4,3,4,4,2,4,2,2,6,6,2,2,2,2,3,2,NA,NA,NA,NA,NA,NA,NA,1,4,5,5,2,5,1,"Online","Not Attractive","Not Dominant",273
+2,2,2,2,2,3,2,2,3,3,2,2,2,6,5,3,4,2,2,3,3,NA,NA,NA,1,NA,NA,NA,NA,5,5,4,5,4,2,"Online","Not Attractive","Not Dominant",274
+1,3,2,3,3,4,2,3,2,4,3,2,2,3,3,4,5,4,4,4,3,NA,NA,NA,NA,NA,NA,1,NA,5,5,4,4,4,5,"Online","Attractive","Dominant",275
+2,3,3,4,2,3,3,3,3,2,2,4,3,5,6,2,3,2,2,2,2,1,NA,NA,NA,NA,NA,NA,NA,5,6,5,5,5,4,"Online","Attractive","Not Dominant",276
+2,2,2,2,2,2,2,2,3,1,2,2,2,5,6,2,3,3,2,4,4,NA,1,NA,NA,NA,NA,NA,NA,5,3,5,5,5,3,"Online","Not Attractive","Dominant",277
+2,4,5,2,2,2,2,4,4,5,1,2,2,5,4,4,4,4,3,2,3,1,NA,NA,NA,NA,NA,NA,NA,3,2,2,2,3,3,"Online","Attractive","Not Dominant",278
+2,3,3,3,3,4,4,4,4,4,4,3,4,6,7,4,3,3,4,4,4,NA,1,NA,NA,NA,NA,NA,NA,5,2,2,5,5,6,"Online","Not Attractive","Dominant",279
+2,5,5,5,5,5,5,5,5,5,5,5,5,7,7,3,4,4,4,4,2,NA,NA,NA,1,NA,NA,NA,NA,4,6,5,6,6,2,"Online","Not Attractive","Not Dominant",280
+2,4,5,3,4,4,3,5,5,5,4,5,5,3,6,4,4,5,4,5,4,NA,NA,1,NA,NA,NA,NA,NA,6,6,6,6,6,5,"Online","Attractive","Dominant",281
+1,2,2,2,2,3,2,2,3,1,2,2,2,5,5,4,2,4,2,4,3,NA,NA,NA,NA,1,NA,NA,NA,5,4,3,5,5,1,"Online","Attractive","Not Dominant",282
+1,3,3,1,3,4,3,4,3,1,1,3,3,5,2,4,4,3,3,3,3,NA,NA,NA,NA,1,NA,NA,NA,2,2,2,2,1,1,"Online","Attractive","Not Dominant",283
+2,3,2,2,2,4,5,4,5,3,2,3,3,4,5,3,3,4,3,2,2,NA,NA,NA,1,NA,NA,NA,NA,4,1,1,1,1,1,"Online","Not Attractive","Not Dominant",284
+2,3,3,2,2,3,1,3,2,3,1,2,3,6,7,4,3,4,4,5,3,NA,1,NA,NA,NA,NA,NA,NA,4,5,5,4,5,3,"Online","Not Attractive","Dominant",285
+1,3,5,3,4,5,5,5,2,5,3,2,4,4,4,5,5,5,4,5,4,NA,NA,NA,NA,NA,NA,1,NA,3,2,1,4,3,4,"Online","Attractive","Dominant",286
+1,4,3,3,3,4,3,2,4,1,3,2,2,5,6,2,2,2,3,3,3,NA,NA,NA,NA,NA,1,NA,NA,4,3,1,4,5,2,"Online","Not Attractive","Dominant",287
+2,3,2,2,1,2,1,1,1,1,1,1,1,2,4,3,4,4,3,4,3,1,NA,NA,NA,NA,NA,NA,NA,6,6,6,4,3,3,"Online","Attractive","Not Dominant",288
+1,5,4,5,4,4,4,4,5,4,4,4,4,6,6,4,4,4,2,5,3,NA,NA,NA,NA,NA,NA,NA,1,6,3,2,3,5,4,"Online","Not Attractive","Not Dominant",289
+2,2,3,2,3,2,3,3,2,3,2,2,2,2,3,4,4,4,4,4,4,NA,NA,1,NA,NA,NA,NA,NA,2,2,2,2,2,1,"Online","Attractive","Dominant",290
+2,4,4,1,5,2,2,4,1,5,2,3,3,3,4,3,2,4,4,5,3,NA,NA,1,NA,NA,NA,NA,NA,5,6,4,4,5,6,"Online","Attractive","Dominant",291
+2,5,5,5,5,5,5,4,4,4,5,4,4,3,3,4,4,4,5,4,4,1,NA,NA,NA,NA,NA,NA,NA,5,3,3,2,3,3,"Online","Attractive","Not Dominant",292
+2,2,2,2,2,4,3,3,5,4,3,3,3,4,5,4,4,4,4,4,4,NA,1,NA,NA,NA,NA,NA,NA,5,4,3,5,5,5,"Online","Not Attractive","Dominant",293
+1,2,2,2,2,2,1,2,2,1,1,2,2,3,4,4,4,5,4,5,3,NA,NA,NA,NA,NA,NA,1,NA,5,3,3,2,4,3,"Online","Attractive","Dominant",294
+1,4,3,5,2,2,1,3,4,2,1,4,3,6,6,2,1,1,2,1,2,NA,NA,NA,NA,NA,NA,NA,1,5,5,6,5,6,2,"Online","Not Attractive","Not Dominant",295
+1,4,4,5,4,4,3,4,3,5,2,2,2,6,7,3,4,4,4,5,2,NA,NA,NA,NA,NA,1,NA,NA,6,6,5,6,6,5,"Online","Not Attractive","Dominant",296
+2,5,5,5,5,5,1,3,4,5,3,2,2,4,7,3,1,2,2,1,3,NA,NA,NA,1,NA,NA,NA,NA,6,5,3,5,6,6,"Online","Not Attractive","Not Dominant",297
+2,3,2,2,2,2,1,1,3,1,2,1,1,3,4,4,4,4,4,4,4,NA,NA,1,NA,NA,NA,NA,NA,2,2,2,5,2,5,"Online","Attractive","Dominant",298
+1,5,5,5,5,5,5,5,5,5,5,5,5,5,4,1,4,3,5,2,3,NA,NA,NA,NA,1,NA,NA,NA,1,3,3,1,4,5,"Online","Attractive","Not Dominant",299
+2,4,5,3,3,5,3,4,4,5,5,4,4,6,6,2,3,4,2,5,3,NA,1,NA,NA,NA,NA,NA,NA,5,5,5,4,5,6,"Online","Not Attractive","Dominant",300
+2,2,2,2,2,2,2,2,2,2,2,2,2,6,6,2,3,2,2,3,2,NA,NA,NA,1,NA,NA,NA,NA,5,5,4,4,5,6,"Online","Not Attractive","Not Dominant",301
+1,2,3,2,2,3,3,3,5,2,4,4,4,6,6,2,1,1,2,1,1,NA,NA,NA,NA,NA,NA,NA,1,2,3,1,1,5,1,"Online","Not Attractive","Not Dominant",302
+1,5,5,4,4,5,3,5,4,5,1,5,5,7,7,3,2,4,4,4,2,NA,NA,NA,NA,1,NA,NA,NA,4,4,6,4,6,1,"Online","Attractive","Not Dominant",303
+2,1,1,1,1,1,1,1,2,1,1,1,1,6,7,2,2,2,2,2,2,1,NA,NA,NA,NA,NA,NA,NA,4,5,6,3,5,3,"Online","Attractive","Not Dominant",304
+2,2,1,1,2,3,2,2,2,2,2,2,2,5,5,2,2,2,4,4,2,NA,NA,NA,1,NA,NA,NA,NA,4,4,3,2,3,2,"Online","Not Attractive","Not Dominant",305
+2,3,2,2,2,3,3,2,2,2,2,2,2,5,5,4,5,4,4,4,4,NA,1,NA,NA,NA,NA,NA,NA,2,1,1,4,2,2,"Online","Not Attractive","Dominant",306
+2,1,1,1,2,2,1,1,1,1,1,1,1,5,3,4,4,3,2,4,2,1,NA,NA,NA,NA,NA,NA,NA,5,5,4,3,3,1,"Online","Attractive","Not Dominant",307
+2,4,3,5,5,4,4,4,5,1,2,5,5,3,2,4,4,5,5,5,4,NA,NA,1,NA,NA,NA,NA,NA,3,3,5,5,5,5,"Online","Attractive","Dominant",308
+2,2,2,2,2,3,2,2,4,2,2,3,3,5,7,4,2,4,3,4,3,NA,NA,NA,1,NA,NA,NA,NA,5,5,6,5,6,5,"Online","Not Attractive","Not Dominant",309
+2,2,2,3,3,3,2,2,4,2,3,3,3,3,4,2,5,4,4,5,3,NA,1,NA,NA,NA,NA,NA,NA,5,3,3,3,5,2,"Online","Not Attractive","Dominant",310
+2,2,2,1,1,2,1,2,2,2,1,1,1,4,5,3,4,4,2,3,4,NA,NA,1,NA,NA,NA,NA,NA,5,5,4,2,3,2,"Online","Attractive","Dominant",311
+2,3,3,3,2,4,3,3,2,3,3,2,2,5,5,2,2,2,2,2,3,1,NA,NA,NA,NA,NA,NA,NA,2,2,3,1,3,1,"Online","Attractive","Not Dominant",312
+2,5,5,5,5,4,5,5,5,4,4,4,4,3,4,2,4,2,3,4,4,1,NA,NA,NA,NA,NA,NA,NA,3,2,3,2,3,2,"Online","Attractive","Not Dominant",313
+1,4,5,4,3,5,5,5,5,4,3,4,4,5,5,3,4,5,3,4,3,NA,NA,NA,NA,NA,1,NA,NA,3,2,2,2,3,1,"Online","Not Attractive","Dominant",314
+2,4,4,3,3,4,4,3,3,3,3,2,2,3,5,4,4,4,4,4,4,NA,NA,1,NA,NA,NA,NA,NA,5,3,3,2,4,4,"Online","Attractive","Dominant",315
+1,1,1,1,1,1,1,1,1,1,1,1,1,3,4,4,4,4,4,4,4,NA,NA,NA,NA,NA,NA,1,NA,5,4,4,4,4,4,"Online","Attractive","Dominant",316
+1,2,1,2,2,1,1,1,2,1,2,1,1,4,6,2,3,2,2,4,3,NA,NA,NA,NA,NA,NA,NA,1,5,5,5,2,5,2,"Online","Not Attractive","Not Dominant",317
+1,3,4,2,2,3,3,3,4,2,2,4,4,3,4,4,4,4,5,5,4,NA,NA,NA,NA,NA,NA,1,NA,3,5,2,2,2,1,"Online","Attractive","Dominant",318
+2,2,2,2,2,2,1,1,2,1,2,2,2,4,6,5,5,5,5,5,5,NA,1,NA,NA,NA,NA,NA,NA,3,3,3,2,4,2,"Online","Not Attractive","Dominant",319
+2,4,1,3,3,4,1,4,5,2,2,5,5,4,6,4,2,3,3,2,1,NA,NA,NA,1,NA,NA,NA,NA,5,5,7,6,6,5,"Online","Not Attractive","Not Dominant",320
+2,2,4,3,3,3,4,4,4,2,3,4,4,4,7,4,3,4,5,2,2,NA,NA,1,NA,NA,NA,NA,NA,3,4,2,2,2,2,"Online","Attractive","Dominant",321
+2,3,2,2,3,2,2,2,2,2,1,3,3,2,2,2,2,2,2,2,3,1,NA,NA,NA,NA,NA,NA,NA,2,2,2,2,2,2,"Online","Attractive","Not Dominant",322
+2,2,2,2,2,3,2,2,2,2,2,2,2,4,4,3,3,3,3,3,3,NA,NA,NA,1,NA,NA,NA,NA,6,6,6,5,5,3,"Online","Not Attractive","Not Dominant",323
+1,4,4,4,4,4,4,4,4,4,4,4,4,6,6,2,2,3,3,3,2,NA,NA,NA,NA,NA,1,NA,NA,5,5,5,4,6,2,"Online","Not Attractive","Dominant",324
+2,2,3,2,2,4,4,3,4,3,2,3,3,3,5,4,4,4,4,4,4,NA,1,NA,NA,NA,NA,NA,NA,3,3,5,3,5,2,"Online","Not Attractive","Dominant",325
+2,4,4,4,4,4,3,4,5,2,3,2,2,6,7,4,4,4,2,4,3,NA,1,NA,NA,NA,NA,NA,NA,6,5,5,5,5,6,"Online","Not Attractive","Dominant",326
+2,3,2,2,2,3,2,3,3,3,4,3,3,4,4,4,4,3,4,4,4,NA,NA,NA,1,NA,NA,NA,NA,5,4,4,6,5,1,"Online","Not Attractive","Not Dominant",327
+2,3,2,2,3,5,1,1,5,1,1,5,5,5,6,2,4,1,3,3,2,1,NA,NA,NA,NA,NA,NA,NA,2,5,5,2,5,4,"Online","Attractive","Not Dominant",328
+1,3,2,2,2,3,2,2,2,1,2,2,2,4,4,3,4,3,2,3,3,NA,NA,NA,NA,1,NA,NA,NA,3,3,4,1,3,1,"Online","Attractive","Not Dominant",329
+2,2,1,2,2,3,3,2,5,3,3,2,1,4,1,2,1,1,3,2,5,NA,NA,1,NA,NA,NA,NA,NA,5,4,4,1,4,1,"Online","Attractive","Dominant",330
+2,1,1,1,1,2,1,1,1,1,1,1,1,2,3,4,4,4,4,4,4,NA,NA,1,NA,NA,NA,NA,NA,6,6,6,6,6,6,"Online","Attractive","Dominant",331
+2,3,5,3,3,5,5,5,5,4,4,5,5,2,2,3,2,1,2,2,3,NA,NA,NA,1,NA,NA,NA,NA,4,2,1,1,3,1,"Online","Not Attractive","Not Dominant",332
+1,3,1,2,1,3,2,2,2,1,1,2,2,4,6,2,2,1,2,3,2,NA,NA,NA,NA,NA,NA,NA,1,4,6,5,3,4,2,"Online","Not Attractive","Not Dominant",333
+2,4,4,4,3,3,5,4,4,3,3,3,2,3,3,2,4,4,5,3,2,1,NA,NA,NA,NA,NA,NA,NA,3,5,2,2,5,3,"Online","Attractive","Not Dominant",334
+2,2,2,2,2,2,2,2,1,1,2,2,2,3,2,3,3,3,3,3,3,NA,1,NA,NA,NA,NA,NA,NA,2,2,2,3,3,2,"Online","Not Attractive","Dominant",335
+2,2,1,2,1,3,2,2,4,1,1,1,1,4,4,2,2,2,1,2,2,NA,NA,NA,1,NA,NA,NA,NA,1,1,1,1,1,1,"Online","Not Attractive","Not Dominant",336
+1,4,4,4,5,5,5,5,4,5,5,5,5,3,4,4,5,5,4,4,4,NA,NA,NA,NA,NA,NA,1,NA,5,5,5,5,5,3,"Online","Attractive","Dominant",337
+1,2,3,2,3,1,3,4,4,2,2,5,4,6,1,4,4,4,5,5,5,NA,NA,NA,NA,NA,1,NA,NA,5,3,4,2,6,1,"Online","Not Attractive","Dominant",338
+1,5,3,4,4,5,4,4,5,3,3,4,4,6,7,2,2,2,1,2,2,NA,NA,NA,NA,NA,NA,NA,1,5,6,5,5,6,4,"Online","Not Attractive","Not Dominant",339
+2,3,2,2,1,4,2,2,3,1,2,1,2,6,7,3,4,5,3,5,3,NA,1,NA,NA,NA,NA,NA,NA,5,6,6,5,5,4,"Online","Not Attractive","Dominant",340
+2,4,2,2,2,3,2,2,2,2,2,2,2,6,7,4,4,4,4,4,3,NA,NA,1,NA,NA,NA,NA,NA,6,6,6,5,6,5,"Online","Attractive","Dominant",341
+1,4,3,2,3,4,3,4,5,3,5,3,4,4,2,2,3,2,4,4,3,NA,NA,NA,NA,1,NA,NA,NA,2,3,4,3,4,1,"Online","Attractive","Not Dominant",342
+2,2,2,1,1,2,1,2,2,1,1,1,2,3,5,2,4,4,2,4,4,1,NA,NA,NA,NA,NA,NA,NA,3,5,5,2,5,2,"Online","Attractive","Not Dominant",343
+2,2,1,2,1,2,1,2,1,1,1,2,1,3,5,2,4,3,4,5,5,NA,NA,1,NA,NA,NA,NA,NA,5,5,5,5,5,4,"Online","Attractive","Dominant",344
+2,2,3,4,4,4,4,3,3,3,3,3,3,6,6,4,3,4,2,3,3,NA,1,NA,NA,NA,NA,NA,NA,5,3,3,3,3,5,"Online","Not Attractive","Dominant",345
+1,2,1,1,1,1,1,1,1,1,2,1,1,4,5,4,4,2,2,4,4,NA,NA,NA,NA,NA,1,NA,NA,5,4,4,4,5,4,"Online","Not Attractive","Dominant",346
+2,5,3,5,5,5,5,5,5,2,5,5,5,3,4,1,1,1,1,3,3,1,NA,NA,NA,NA,NA,NA,NA,4,4,4,1,4,1,"Online","Attractive","Not Dominant",347
+2,3,2,3,3,4,3,2,5,4,2,1,1,4,5,3,5,4,4,4,5,NA,NA,NA,1,NA,NA,NA,NA,5,5,3,5,5,7,"Online","Not Attractive","Not Dominant",348
+1,4,3,2,2,2,1,1,2,1,2,2,2,5,6,4,4,3,4,4,4,NA,NA,NA,NA,NA,1,NA,NA,6,6,7,7,7,4,"Online","Not Attractive","Dominant",349
+1,4,4,4,4,4,3,4,4,5,3,3,5,7,6,3,3,3,3,3,3,NA,NA,NA,NA,NA,NA,NA,1,5,5,3,5,6,4,"Online","Not Attractive","Not Dominant",350
+1,4,1,2,2,1,1,1,2,1,1,1,1,5,6,4,3,4,1,2,1,NA,NA,NA,NA,1,NA,NA,NA,5,6,3,6,6,5,"Online","Attractive","Not Dominant",351
+1,3,2,2,1,2,1,1,2,1,1,1,1,4,3,3,4,4,2,4,3,NA,NA,NA,NA,NA,NA,1,NA,6,5,5,6,6,4,"Online","Attractive","Dominant",352
+1,2,1,1,1,2,1,1,1,1,1,1,1,4,4,3,4,4,3,4,3,NA,NA,NA,NA,NA,1,NA,NA,3,3,3,3,3,3,"Online","Not Attractive","Dominant",353
+2,2,2,2,2,3,3,2,2,2,2,3,3,5,5,2,3,3,4,3,2,NA,NA,NA,1,NA,NA,NA,NA,4,4,3,3,4,2,"Online","Not Attractive","Not Dominant",354
+2,2,2,1,2,3,1,2,2,2,2,2,2,4,5,2,2,2,1,2,4,NA,1,NA,NA,NA,NA,NA,NA,5,4,3,3,5,5,"Online","Not Attractive","Dominant",355
+2,2,2,1,1,2,1,1,2,1,1,1,1,4,5,4,4,4,4,4,3,NA,NA,1,NA,NA,NA,NA,NA,3,4,3,2,3,2,"Online","Attractive","Dominant",356
+1,4,3,4,4,3,4,4,3,3,3,3,3,7,6,2,2,3,2,2,3,NA,NA,NA,NA,NA,NA,NA,1,4,5,5,1,4,2,"Online","Not Attractive","Not Dominant",357
+1,2,1,2,2,2,2,2,2,1,2,1,1,4,2,2,2,2,2,4,3,NA,NA,NA,NA,1,NA,NA,NA,4,3,3,2,2,2,"Online","Attractive","Not Dominant",358
+2,3,2,3,2,3,3,2,4,2,2,3,2,1,3,2,3,2,4,2,4,1,NA,NA,NA,NA,NA,NA,NA,2,3,2,5,3,6,"Online","Attractive","Not Dominant",359
+2,2,1,2,2,1,1,1,2,1,2,1,1,3,4,3,4,4,3,4,4,NA,NA,NA,1,NA,NA,NA,NA,5,4,2,5,4,4,"Online","Not Attractive","Not Dominant",360
+1,2,2,2,2,4,2,2,2,1,4,3,1,2,3,4,5,5,4,5,2,NA,NA,NA,NA,NA,NA,1,NA,6,4,2,2,2,2,"Online","Attractive","Dominant",361
+2,5,4,5,4,3,2,4,1,4,3,5,4,2,4,1,2,2,2,3,2,1,NA,NA,NA,NA,NA,NA,NA,4,5,5,4,4,3,"Online","Attractive","Not Dominant",362
+1,2,2,5,3,5,5,5,5,1,2,5,5,5,2,4,4,3,3,5,4,NA,NA,NA,NA,NA,NA,NA,1,1,4,1,1,1,1,"Online","Not Attractive","Not Dominant",363
+1,4,3,4,3,2,3,3,4,2,2,3,3,4,3,2,2,4,2,3,3,NA,NA,NA,NA,1,NA,NA,NA,2,2,1,1,2,1,"Online","Attractive","Not Dominant",364
+1,4,3,3,3,3,2,4,2,2,3,4,2,5,3,4,4,5,5,5,5,NA,NA,NA,NA,NA,NA,1,NA,3,2,2,1,3,1,"Online","Attractive","Dominant",365
+1,4,1,4,2,5,4,4,5,3,3,4,5,4,3,4,1,3,2,1,5,NA,NA,NA,NA,NA,1,NA,NA,3,5,4,1,1,1,"Online","Not Attractive","Dominant",366
+1,4,3,2,2,3,3,2,2,3,2,2,3,6,6,4,3,2,2,1,1,NA,NA,NA,NA,NA,NA,NA,1,6,6,5,2,6,1,"Online","Not Attractive","Not Dominant",367
+1,1,1,1,1,1,1,1,1,1,1,1,1,5,5,2,3,2,3,3,3,NA,NA,NA,NA,1,NA,NA,NA,5,6,6,3,5,4,"Online","Attractive","Not Dominant",368
+2,2,2,2,1,1,1,2,2,1,1,2,2,6,3,3,3,4,5,5,5,NA,1,NA,NA,NA,NA,NA,NA,6,5,5,5,4,5,"Online","Not Attractive","Dominant",369
+2,2,2,2,2,3,2,2,3,2,2,2,2,4,4,4,4,4,5,4,4,NA,NA,1,NA,NA,NA,NA,NA,5,4,3,3,4,3,"Online","Attractive","Dominant",370
+2,4,3,4,3,4,4,4,5,3,4,4,4,5,1,3,4,3,3,3,2,NA,NA,NA,1,NA,NA,NA,NA,1,1,1,1,1,1,"Online","Not Attractive","Not Dominant",371
+2,2,2,2,2,4,1,2,3,2,2,2,2,5,6,4,4,4,4,4,4,NA,1,NA,NA,NA,NA,NA,NA,3,5,4,4,5,6,"Online","Not Attractive","Dominant",372
+1,2,1,2,2,2,1,2,2,2,1,1,1,4,6,4,4,4,4,4,4,NA,NA,NA,NA,NA,NA,1,NA,6,6,6,5,6,5,"Online","Attractive","Dominant",373
+2,2,2,1,1,2,1,2,2,3,1,2,2,7,7,3,4,1,3,3,3,NA,NA,1,NA,NA,NA,NA,NA,5,5,5,5,5,1,"Online","Attractive","Dominant",374
+2,4,2,3,3,5,3,2,5,2,4,4,4,3,3,3,2,2,3,3,3,1,NA,NA,NA,NA,NA,NA,NA,4,3,3,2,5,2,"Online","Attractive","Not Dominant",375
+2,4,4,3,5,2,5,4,5,3,1,5,5,3,2,4,2,2,4,4,3,NA,NA,1,NA,NA,NA,NA,NA,2,3,6,3,2,6,"Online","Attractive","Dominant",376
+1,3,3,3,3,4,4,4,4,2,3,4,4,5,5,2,3,2,2,3,3,NA,NA,NA,NA,NA,1,NA,NA,2,2,3,1,1,1,"Online","Not Attractive","Dominant",377
+1,4,3,4,4,4,3,5,4,3,3,5,4,3,2,2,3,2,3,3,4,NA,NA,NA,NA,1,NA,NA,NA,3,2,2,2,3,1,"Online","Attractive","Not Dominant",378
+1,3,2,2,2,4,2,2,2,2,2,3,3,5,6,4,4,4,4,5,5,NA,NA,NA,NA,NA,1,NA,NA,5,5,4,4,4,3,"Online","Not Attractive","Dominant",379
+2,4,4,4,3,5,4,5,5,4,4,5,4,6,2,2,2,2,2,2,1,1,NA,NA,NA,NA,NA,NA,NA,5,5,5,3,5,5,"Online","Attractive","Not Dominant",380
+2,2,2,4,2,4,3,3,4,2,2,3,3,6,6,4,4,1,5,5,3,NA,1,NA,NA,NA,NA,NA,NA,6,6,6,5,6,6,"Online","Not Attractive","Dominant",381
+2,4,5,4,4,2,3,4,3,5,2,5,5,6,6,4,3,2,2,3,3,NA,NA,NA,1,NA,NA,NA,NA,6,5,5,2,5,5,"Online","Not Attractive","Not Dominant",382
+1,4,4,5,4,1,4,4,5,5,3,3,4,3,4,4,5,5,5,5,2,NA,NA,NA,NA,NA,NA,1,NA,5,5,4,5,5,3,"Online","Attractive","Dominant",383
+1,2,2,2,2,2,2,2,2,2,1,2,2,7,7,1,3,5,3,2,5,NA,NA,NA,NA,NA,NA,NA,1,4,4,4,5,5,1,"Online","Not Attractive","Not Dominant",384
+1,3,2,2,2,2,2,2,3,3,2,3,3,6,7,1,1,1,1,2,2,NA,NA,NA,NA,NA,NA,NA,1,6,6,5,5,6,1,"Online","Not Attractive","Not Dominant",385
+1,5,2,4,3,5,2,4,5,3,4,4,4,4,5,4,4,5,4,4,3,NA,NA,NA,NA,NA,NA,1,NA,3,4,2,5,6,3,"Online","Attractive","Dominant",386
+1,3,3,2,3,4,4,3,2,3,4,3,3,4,5,3,4,4,4,5,3,NA,NA,NA,NA,NA,1,NA,NA,3,5,3,2,5,1,"Online","Not Attractive","Dominant",387
+1,3,2,2,2,2,1,2,1,1,1,2,1,4,5,4,4,4,4,4,3,NA,NA,NA,NA,1,NA,NA,NA,5,5,6,6,5,4,"Online","Attractive","Not Dominant",388
+1,5,5,5,5,5,3,5,5,5,3,1,2,3,4,4,4,3,5,4,5,NA,NA,NA,NA,NA,NA,1,NA,5,5,5,4,5,4,"Online","Attractive","Dominant",389
+2,4,3,4,3,2,1,3,2,1,3,2,3,2,2,5,4,4,5,5,4,NA,NA,1,NA,NA,NA,NA,NA,6,5,5,6,6,6,"Online","Attractive","Dominant",390
+2,4,3,3,3,5,4,4,4,5,2,2,4,6,6,1,2,2,2,2,3,NA,NA,NA,1,NA,NA,NA,NA,6,6,6,6,6,6,"Online","Not Attractive","Not Dominant",391
+1,3,3,4,2,3,3,4,2,2,4,3,3,4,5,2,3,3,3,4,3,NA,NA,NA,NA,NA,NA,NA,1,5,5,4,4,5,3,"Online","Not Attractive","Not Dominant",392
+2,3,4,5,4,5,5,5,5,5,5,5,5,4,6,4,4,4,4,3,4,1,NA,NA,NA,NA,NA,NA,NA,5,4,4,4,4,6,"Online","Attractive","Not Dominant",393
+1,2,1,2,2,2,2,2,2,2,2,2,2,4,6,5,5,5,5,5,3,NA,NA,NA,NA,NA,1,NA,NA,4,4,4,4,5,4,"Online","Not Attractive","Dominant",394
+1,5,4,5,5,4,5,4,5,4,3,5,4,6,7,3,3,2,4,3,3,NA,NA,NA,NA,1,NA,NA,NA,5,4,5,5,4,5,"Online","Attractive","Not Dominant",395
+2,2,2,2,1,2,1,1,2,1,3,1,1,4,5,2,1,1,1,3,2,1,NA,NA,NA,NA,NA,NA,NA,2,2,2,3,3,3,"Online","Attractive","Not Dominant",396
+2,4,4,4,4,4,4,4,3,3,3,4,4,5,5,5,5,5,5,5,5,NA,1,NA,NA,NA,NA,NA,NA,2,2,2,1,6,4,"Online","Not Attractive","Dominant",397
+1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,1,2,1,1,2,1,NA,NA,NA,NA,NA,NA,1,NA,4,4,4,4,4,4,"Online","Attractive","Dominant",398
+1,2,2,1,1,2,1,2,2,1,1,1,2,4,5,4,4,4,4,4,3,NA,NA,NA,NA,NA,NA,1,NA,6,6,6,3,4,4,"Online","Attractive","Dominant",399
+1,5,4,4,5,4,5,5,5,4,3,5,4,4,6,4,3,2,4,4,2,NA,NA,NA,NA,1,NA,NA,NA,4,5,4,2,4,2,"Online","Attractive","Not Dominant",400
+2,2,2,1,1,3,2,2,2,1,2,1,2,5,5,2,2,2,2,3,3,NA,NA,NA,1,NA,NA,NA,NA,6,4,4,4,5,4,"Online","Not Attractive","Not Dominant",401
+2,5,4,5,4,4,3,5,5,4,4,5,5,2,5,3,3,3,2,3,3,1,NA,NA,NA,NA,NA,NA,NA,5,4,3,3,4,3,"Online","Attractive","Not Dominant",402
+1,5,5,1,1,3,1,3,1,1,1,1,2,7,7,4,2,1,1,1,1,NA,NA,NA,NA,1,NA,NA,NA,7,7,7,7,7,7,"Online","Attractive","Not Dominant",403
+1,3,4,3,3,4,3,5,3,4,3,4,4,4,4,4,4,5,5,5,4,NA,NA,NA,NA,NA,NA,1,NA,4,4,3,2,4,3,"Online","Attractive","Dominant",404
+2,2,1,1,2,2,2,2,2,2,1,1,1,7,7,4,4,4,3,4,3,NA,1,NA,NA,NA,NA,NA,NA,6,6,7,7,6,6,"Field","Not Attractive","Dominant",405
+2,4,4,1,4,1,1,4,2,4,1,1,2,5,6,4,4,4,1,3,1,1,NA,NA,NA,NA,NA,NA,NA,5,6,5,6,6,4,"Field","Attractive","Not Dominant",406
+1,2,5,2,5,5,4,3,2,5,4,2,2,7,7,2,4,4,2,4,2,NA,NA,NA,NA,1,NA,NA,NA,7,7,7,7,7,7,"Field","Attractive","Not Dominant",407
+2,4,4,4,5,1,2,4,3,3,1,4,4,4,4,4,4,2,2,2,4,NA,NA,NA,1,NA,NA,NA,NA,3,2,2,2,3,3,"Field","Not Attractive","Not Dominant",408
+2,3,2,2,2,4,3,4,5,2,2,4,4,3,3,3,4,4,2,4,4,NA,NA,1,NA,NA,NA,NA,NA,5,5,5,5,5,2,"Field","Attractive","Dominant",409
+1,3,1,2,2,2,1,2,2,1,1,2,2,5,5,1,3,2,2,3,2,NA,NA,NA,NA,NA,NA,NA,1,5,3,3,5,3,2,"Field","Not Attractive","Not Dominant",410
+1,2,3,2,2,2,2,3,2,2,2,2,2,6,6,2,2,3,1,2,3,NA,NA,NA,NA,NA,1,NA,NA,5,5,5,5,5,5,"Field","Not Attractive","Dominant",411
+2,3,3,3,2,2,3,3,3,3,2,3,3,5,6,3,3,2,3,3,4,NA,NA,NA,1,NA,NA,NA,NA,5,5,5,5,5,2,"Field","Not Attractive","Not Dominant",412
+1,2,3,2,2,4,1,2,3,1,4,3,3,3,3,3,5,4,5,4,4,NA,NA,NA,NA,NA,NA,1,NA,2,2,2,1,3,1,"Field","Attractive","Dominant",413
+1,4,2,3,3,4,3,3,3,3,4,3,4,3,4,4,4,3,4,4,2,NA,NA,NA,NA,1,NA,NA,NA,5,4,4,5,5,3,"Field","Attractive","Not Dominant",414
+2,3,3,2,5,4,2,3,5,2,2,3,3,4,5,2,4,4,4,4,5,NA,1,NA,NA,NA,NA,NA,NA,4,5,3,5,5,3,"Field","Not Attractive","Dominant",415
+2,4,2,4,3,5,4,3,5,3,4,3,2,3,5,3,4,4,4,4,3,NA,NA,1,NA,NA,NA,NA,NA,6,6,5,4,6,4,"Field","Attractive","Dominant",416
+2,2,1,2,1,2,1,1,2,1,1,2,2,2,4,2,2,3,3,2,3,1,NA,NA,NA,NA,NA,NA,NA,5,6,6,6,6,5,"Field","Attractive","Not Dominant",417
+2,2,2,2,2,3,3,3,2,2,3,1,2,2,2,5,4,4,4,5,5,NA,NA,1,NA,NA,NA,NA,NA,2,3,3,3,2,2,"Field","Attractive","Dominant",418
+2,4,2,2,3,2,2,2,2,3,3,3,3,4,4,3,3,3,3,3,3,NA,NA,NA,1,NA,NA,NA,NA,3,4,2,2,4,3,"Field","Not Attractive","Not Dominant",419
+1,2,2,3,2,3,2,2,3,3,1,1,2,5,3,2,4,4,4,5,2,NA,NA,NA,NA,NA,NA,1,NA,6,5,5,5,4,1,"Field","Attractive","Dominant",420
+2,4,4,4,4,4,4,4,4,4,4,4,4,4,6,4,4,4,4,3,4,NA,1,NA,NA,NA,NA,NA,NA,5,6,5,5,5,5,"Field","Not Attractive","Dominant",421
+1,2,2,3,2,3,3,2,2,3,2,2,4,6,4,4,3,4,4,4,3,NA,NA,NA,NA,NA,1,NA,NA,5,5,2,2,5,5,"Field","Not Attractive","Dominant",422
+2,2,1,1,1,2,1,2,2,2,1,1,2,6,7,4,3,4,3,4,5,NA,1,NA,NA,NA,NA,NA,NA,5,5,4,3,5,4,"Field","Not Attractive","Dominant",423
+2,5,5,5,5,5,4,5,5,5,3,5,5,3,4,4,4,4,3,5,4,NA,NA,1,NA,NA,NA,NA,NA,6,5,6,5,7,4,"Field","Attractive","Dominant",424
+2,4,4,5,5,4,3,4,4,5,2,4,4,7,7,3,3,4,3,4,3,NA,NA,NA,1,NA,NA,NA,NA,6,5,6,6,6,6,"Field","Not Attractive","Not Dominant",425
+1,2,1,2,2,1,1,1,2,1,1,1,1,4,6,2,2,2,2,3,2,NA,NA,NA,NA,1,NA,NA,NA,5,5,5,5,6,5,"Field","Attractive","Not Dominant",426
+2,2,2,2,2,4,2,3,2,3,2,4,4,3,5,4,4,4,4,4,4,1,NA,NA,NA,NA,NA,NA,NA,5,2,2,2,5,1,"Field","Attractive","Not Dominant",427
+1,1,1,1,1,2,1,1,1,1,1,1,1,7,7,3,4,4,5,3,4,NA,NA,NA,NA,NA,1,NA,NA,4,3,5,4,4,3,"Field","Not Attractive","Dominant",428
+2,1,1,1,1,1,1,1,1,1,1,1,1,7,6,3,4,4,4,4,1,NA,1,NA,NA,NA,NA,NA,NA,6,6,6,6,6,5,"Field","Not Attractive","Dominant",429
+2,2,1,1,1,2,1,1,2,1,1,1,1,7,7,4,4,4,3,5,4,NA,NA,1,NA,NA,NA,NA,NA,6,6,6,6,6,5,"Field","Attractive","Dominant",430
+1,4,4,4,4,4,4,4,4,4,4,4,4,3,5,3,5,4,5,5,5,NA,NA,NA,NA,NA,NA,1,NA,5,5,3,1,5,2,"Field","Attractive","Dominant",431
+1,4,2,2,2,1,1,2,1,2,1,1,1,5,5,3,4,4,3,4,2,NA,NA,NA,NA,1,NA,NA,NA,3,3,3,3,5,3,"Field","Attractive","Not Dominant",432
+2,3,3,3,3,2,2,3,2,3,3,1,2,2,4,4,4,4,2,3,2,1,NA,NA,NA,NA,NA,NA,NA,6,6,4,5,5,3,"Field","Attractive","Not Dominant",433
+2,3,2,2,1,2,2,2,3,2,3,3,2,6,6,2,2,1,1,2,4,NA,NA,NA,1,NA,NA,NA,NA,5,3,3,5,5,2,"Field","Not Attractive","Not Dominant",434
+1,2,2,1,2,3,1,2,2,1,1,1,2,6,7,4,2,3,1,2,2,NA,NA,NA,NA,NA,NA,NA,1,6,6,5,5,5,2,"Field","Not Attractive","Not Dominant",435
+2,3,3,2,2,2,1,1,3,2,3,1,1,5,5,2,2,2,3,3,3,NA,NA,NA,1,NA,NA,NA,NA,5,5,6,3,5,3,"Field","Not Attractive","Not Dominant",436
+2,4,4,4,4,2,3,2,1,5,1,3,2,5,6,4,5,5,4,4,5,NA,1,NA,NA,NA,NA,NA,NA,2,4,3,2,2,2,"Field","Not Attractive","Dominant",437
+2,1,1,1,1,1,1,1,1,1,1,1,1,7,7,2,4,4,2,4,3,NA,NA,NA,1,NA,NA,NA,NA,6,7,6,6,7,5,"Field","Not Attractive","Not Dominant",438
+2,4,3,3,3,4,4,4,4,3,5,5,5,5,5,2,2,2,2,2,2,NA,NA,1,NA,NA,NA,NA,NA,6,6,6,3,6,6,"Field","Attractive","Dominant",439
+2,3,4,3,4,3,2,4,3,3,4,2,4,4,5,2,4,3,2,2,3,1,NA,NA,NA,NA,NA,NA,NA,5,5,6,5,5,6,"Field","Attractive","Not Dominant",440
+2,2,3,2,2,5,3,2,4,5,5,1,3,7,7,1,1,1,2,1,1,NA,1,NA,NA,NA,NA,NA,NA,6,6,6,7,7,6,"Field","Not Attractive","Dominant",441
+2,2,2,2,2,2,3,2,2,1,1,2,2,5,6,3,2,4,3,3,2,NA,1,NA,NA,NA,NA,NA,NA,5,4,5,3,5,3,"Field","Not Attractive","Dominant",442
+2,4,4,3,2,4,2,4,1,3,2,2,3,2,4,4,5,5,4,5,5,NA,NA,1,NA,NA,NA,NA,NA,6,6,5,5,5,6,"Field","Attractive","Dominant",443
+1,5,2,2,2,2,3,4,4,3,2,5,4,2,2,4,4,4,3,3,4,NA,NA,NA,NA,NA,NA,1,NA,5,2,2,2,3,1,"Field","Attractive","Dominant",444
+2,4,4,4,4,5,3,4,3,5,3,3,4,3,6,2,2,3,3,3,3,1,NA,NA,NA,NA,NA,NA,NA,6,6,6,4,6,4,"Field","Attractive","Not Dominant",445
+2,2,2,1,2,2,2,1,2,2,1,1,1,7,7,4,3,2,2,1,2,NA,NA,NA,1,NA,NA,NA,NA,7,7,7,7,7,7,"Field","Not Attractive","Not Dominant",446
+2,4,4,3,3,5,5,4,3,3,3,5,3,2,2,4,1,1,3,1,5,NA,NA,NA,1,NA,NA,NA,NA,4,4,4,5,6,1,"Field","Not Attractive","Not Dominant",447
+2,5,4,4,5,5,3,5,5,5,5,3,5,7,7,4,4,4,5,5,4,NA,1,NA,NA,NA,NA,NA,NA,2,6,1,2,5,1,"Field","Not Attractive","Dominant",448
+1,2,1,1,2,3,2,1,2,1,2,1,1,6,7,3,4,4,1,3,3,NA,NA,NA,NA,NA,1,NA,NA,6,6,6,5,6,5,"Field","Not Attractive","Dominant",449
+1,4,3,3,5,1,2,1,1,5,1,2,2,6,7,3,4,3,2,4,3,NA,NA,NA,NA,NA,NA,NA,1,6,5,4,3,4,5,"Field","Not Attractive","Not Dominant",450
+2,2,1,2,2,3,1,1,4,1,3,2,1,3,6,4,4,5,3,4,3,NA,NA,1,NA,NA,NA,NA,NA,6,6,6,5,6,5,"Field","Attractive","Dominant",451
+2,3,3,2,2,2,1,2,2,3,2,1,3,5,6,4,4,2,2,4,3,1,NA,NA,NA,NA,NA,NA,NA,5,5,5,5,6,7,"Field","Attractive","Not Dominant",452
+2,2,2,2,2,3,1,2,3,2,2,4,4,6,6,2,2,2,3,3,3,NA,1,NA,NA,NA,NA,NA,NA,4,5,5,3,5,4,"Field","Not Attractive","Dominant",453
+2,2,2,3,3,3,4,3,4,3,3,4,4,4,4,4,3,2,3,3,2,NA,NA,NA,1,NA,NA,NA,NA,5,5,5,2,5,6,"Field","Not Attractive","Not Dominant",454
+1,4,4,2,4,4,4,3,2,4,3,1,3,4,5,4,4,4,4,4,3,NA,NA,NA,NA,1,NA,NA,NA,6,6,6,5,6,3,"Field","Attractive","Not Dominant",455
+1,5,5,5,5,5,5,5,5,5,3,3,3,5,4,4,4,5,3,4,5,NA,NA,NA,NA,NA,1,NA,NA,2,3,1,1,1,1,"Field","Not Attractive","Dominant",456

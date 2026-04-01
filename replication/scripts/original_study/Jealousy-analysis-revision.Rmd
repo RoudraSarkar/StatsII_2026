@@ -1,0 +1,1253 @@
+---
+title: "Replication studies of Dijkstra & Buunk (1998)"
+author: "Thomas Pollet"
+date: '`r format(Sys.Date())`'
+output:
+  html_document:  
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Background for revision.
+
+Following a review, we were asked to revise our paper with regards to the meta-analysis, so note that these are the only substantially changed sections. (Though we did also remove the chunks which exported the results from the Bayes Factor analyses, as broom has deprecated the tidying functions for 'bayes'). 
+
+Note that there accompanying documents relating to the effect size calculations for these meta-analyses. This analysis document will require you to install packages (see 'session info' for packages needed) and have the relevant data files in your folder.
+
+# Study 1
+
+## Data Wrangling
+
+Importing the datasets for entire study. These are as they were on Qualtrics, with the exception of the removal of IP addresses, 'preview' completions, and personal codes allowing withdrawal
+
+```{r}
+require(dplyr)
+require(skimr)
+require(haven)
+Data_online<-read_spss("Study1-Online.sav")
+Data_field<-read_spss("Study1-Field.sav")
+```
+ 
+Q54 is the last question, therefore this indicates completion.
+
+```{r}
+Data_online <- Data_online %>% filter(!is.na(Q54))
+Data_field <- Data_field %>% filter(!is.na(Q54))
+```
+
+Only heterosexual participants included.
+
+```{r}
+Data_online<-Data_online %>% filter(Q6==1)
+Data_field <- Data_field %>% filter(Q6==1)
+```
+
+Age for descriptives.
+
+```{r}
+Age<-c(Data_online$Q5,Data_field$Q5)
+mean(Age)
+sd(Age)
+min(Age)
+max(Age)
+```
+
+Gender for descriptives.
+
+```{r}
+Gender<-c(Data_online$Q4,Data_field$Q4)
+table(Gender)
+prop.table(table(Gender))
+```
+
+Student and romantic relationship for descriptives
+
+```{r}
+Student<-c(Data_online$Q8,Data_field$Q8)
+table(Student)
+prop.table(table(Student))
+Romantic<-c(Data_online$Q7,Data_field$Q7)
+table(Romantic)
+prop.table(table(Romantic))
+```
+
+## Subset for analysis
+
+```{r}
+Data_analysis1<- Data_online %>% select(Q4,Q23:Q37,Q39,Q40,Q41,Q42,Q43,Q44,FL_21_DO_Scenario5_attractiveandnotdominantfemale,FL_21_DO_Scenario7_unattractiveanddominantfemale,FL_21_DO_Scenario6_attractiveanddominantfemale,FL_21_DO_Scenario8_unattractiveandnonedominantfemale,FL_17_DO_Scenario_attractiveandnon_dominantmale,FL_17_DO_Scenario3_dominantandunattractivemale,FL_17_DO_Scenario1_attractiveanddominantmale,FL_17_DO_Scenario4_NotDominantandUnattractivemale, Q93:Q98)
+names(Data_analysis1)<-c("Gender","Suspicious","Betrayed","Worried","Distrustful","Jealousy","Rejected","Hurt","Anxious","Angry", "Threatened","Sad","Upset","Attractiveness_check1","Attractiveness_check2","Assertiveness","Self_confidence","Extroverted","Influential","Socially_competent","Good_judge_of_character","Attractive_not_dominant_woman","Unattractive_dominant_woman","Attractive_dominant_woman","Unattractive_not_dominant_woman","Attractive_not_dominant_man","Unattractive_dominant_man","Attractive_dominant_man","Unattractive_not_dominant_man","Mate_value1","Mate_value2", "Mate_value3","Mate_value4", "Mate_value5", "Mate_value6")
+Data_analysis1$Sample<-rep("Online",nrow(Data_analysis1))
+# For some reason qualtrics exports.The label here but not elsewhere Q34.
+Data_analysis2<- Data_field %>% select(Q4,Q23:Q34, Q36:Q37,Q39,Q40,Q41,Q42,Q43,Q44,Q74,Q77,Q83,Q80,Q68,Q71,Q89,Q86, Q93:Q98)
+names(Data_analysis2)<-c("Gender","Suspicious","Betrayed","Worried","Distrustful","Jealousy","Rejected","Hurt","Anxious","Angry", "Threatened","Sad","Upset","Attractiveness_check1","Attractiveness_check2","Assertiveness","Self_confidence","Extroverted","Influential","Socially_competent","Good_judge_of_character","Attractive_not_dominant_woman","Unattractive_dominant_woman","Attractive_dominant_woman","Unattractive_not_dominant_woman","Attractive_not_dominant_man","Unattractive_dominant_man","Attractive_dominant_man","Unattractive_not_dominant_man", "Mate_value1","Mate_value2", "Mate_value3","Mate_value4", "Mate_value5", "Mate_value6")
+Data_analysis2$Sample<-rep("Field",nrow(Data_analysis2))
+Data_analysis<-rbind(Data_analysis1,Data_analysis2)
+
+```
+
+## Recode to get the 2x2 condition variable. 
+
+Using "case_when". Also generate ID
+
+```{r}
+Data_analysis<-Data_analysis %>% mutate(Attractive_condition=case_when(Attractive_not_dominant_woman == 1 | Attractive_dominant_woman == 1 | Attractive_not_dominant_man == 1 | Attractive_dominant_man == 1 ~ "Attractive", TRUE ~ "Not Attractive"), Dominant_condition=case_when(Attractive_dominant_woman == 1 | Unattractive_dominant_woman == 1 | Attractive_dominant_man == 1 | Unattractive_dominant_man == 1 ~ "Dominant", TRUE ~ "Not Dominant"), ID=1:nrow(Data_analysis))
+write.csv(Data_analysis, "Dataset1.csv", row.names = F)
+write_sav(Data_analysis, "Dataset1.sav")
+```
+
+## Cronbach's alpha.
+
+```{r}
+require(psych)
+alpha<- Data_analysis %>% dplyr::select(Mate_value1:Mate_value6)
+require(psych)
+psych::alpha(as.data.frame(alpha))
+```
+
+Sum scale.
+
+```{r}
+Data_analysis<-Data_analysis %>% mutate(Mate_value= Mate_value1+Mate_value2+Mate_value3+Mate_value4+Mate_value5+Mate_value6)
+```
+
+There was no significant difference between the genders in mate value, therefore there is no value of including mate value as a covariate. Note that there is one missing value.
+
+```{r}
+t.test(Mate_value~Gender, data=Data_analysis)
+```
+
+```{r}
+require(tidyr)
+summary_mate_value <- Data_analysis %>% # "Start with the data set
+  group_by(Gender) %>% # Then group by IV
+  summarize(N = length(na.omit(Mate_value)),
+            Mean_mate_value = mean(Mate_value, na.rm=T),
+            SD_mate_value = sd(Mate_value,na.rm = T),
+            SE_mate_value= SD_mate_value/sqrt(N)) # Then summarize each group, these are complete so we can use same N
+summary_mate_value
+
+```
+
+Similar to Dijkstra et al. 1998, there were no significant effects of conditons on mate value. 
+
+```{r}
+t.test(Mate_value~Attractive_condition, data=Data_analysis)
+t.test(Mate_value~Dominant_condition, data=Data_analysis)
+```
+
+
+## Manipulation checks.
+
+Using the 'ez' package.
+
+```{r}
+require(dplyr)
+Data_analysis_men<- Data_analysis %>% filter(Gender==1)
+Data_analysis_women<- Data_analysis %>% filter(Gender==2)
+
+```
+
+
+```{r}
+require(ez)
+require(papaja)
+Ez_ANOVA1<-ezANOVA(Data_analysis_men, dv=Attractiveness_check1, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type = 3)
+Ez_ANOVA1
+Ez_ANOVA2<-ezANOVA(Data_analysis_women, dv=Attractiveness_check1, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type = 3)
+Ez_ANOVA2
+Ez_ANOVA3<-ezANOVA(Data_analysis_men, dv=Attractiveness_check2, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type = 3)
+Ez_ANOVA3
+Ez_ANOVA4<-ezANOVA(Data_analysis_women, dv=Attractiveness_check2, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type = 3)
+Ez_ANOVA4
+```
+
+```{r}
+require(apa)
+anova_apa(Ez_ANOVA1, es="ges", format = "rmarkdown")
+anova_apa(Ez_ANOVA2, es="ges", format = "rmarkdown")
+anova_apa(Ez_ANOVA3, es="ges", format = "rmarkdown")
+anova_apa(Ez_ANOVA4, es="ges", format = "rmarkdown")
+```
+
+```{r}
+summary_attractive_men <- Data_analysis_men  %>% # "Start with the data set
+  group_by(Attractive_condition) %>% # Then group by IV
+  summarize(N = length(Attractiveness_check1), # Then summarize each group, these are complete so we can use same N
+            Mean_att1 = mean(Attractiveness_check1),
+            SD_att1 = sd(Attractiveness_check1),
+            SE_att1 = SD_att1/sqrt(N), # Then summarize each group, these are complete so we can use same N
+            Mean_att2 = mean(Attractiveness_check2),
+            SD_att2 = sd(Attractiveness_check2),
+            SE_att2 = SD_att2/sqrt(N)) 
+summary_attractive_men
+
+summary_attractive_women <- Data_analysis_women  %>% # "Start with the data set
+  group_by(Attractive_condition) %>% # Then group by IV
+  summarize(N = length(Attractiveness_check1), # Then summarize each group, these are complete so we can use same N
+            Mean_att1 = mean(Attractiveness_check1),
+            SD_att1 = sd(Attractiveness_check1),
+            SE_att1 = SD_att1/sqrt(N), # Then summarize each group, these are complete so we can use same N
+            Mean_att2 = mean(Attractiveness_check2),
+            SD_att2 = sd(Attractiveness_check2),
+            SE_att2 = SD_att2/sqrt(N)) 
+summary_attractive_women
+
+```
+
+MANOVA for dominance (note no checks for assumption tests - these were also not reported in Dijkstra & Buunk, 1998).
+
+```{r}
+Manovamodel_men <- manova(cbind(Assertiveness, Self_confidence,Extroverted,Influential,Socially_competent,Good_judge_of_character) ~ Dominant_condition, data = Data_analysis_men)
+summary(Manovamodel_men)
+summary(Manovamodel_men, test="Roy")
+summary(Manovamodel_men, test="Wilks")
+summary(Manovamodel_men, test="Hotelling-Lawley")
+summary.aov(Manovamodel_men)
+```
+
+Following a reviewer's request, we also added attractiveness.
+
+```{r}
+Manovamodel_men_attr <- manova(cbind(Assertiveness, Self_confidence,Extroverted,Influential,Socially_competent,Good_judge_of_character) ~ Dominant_condition*Attractive_condition, data = Data_analysis_men)
+summary(Manovamodel_men_attr)
+summary(Manovamodel_men_attr, test="Roy")
+summary(Manovamodel_men_attr, test="Wilks")
+summary(Manovamodel_men_attr, test="Hotelling-Lawley")
+summary.aov(Manovamodel_men_attr)
+Manovamodel_men_attr$coefficients # check signs.
+```
+
+Note that there were 3 women who did not complete all items.
+
+```{r}
+Manovamodel_women <- manova(cbind(Assertiveness, Self_confidence,Extroverted,Influential,Socially_competent,Good_judge_of_character) ~ Dominant_condition, data = Data_analysis_women)
+summary(Manovamodel_women)
+summary(Manovamodel_women, test="Roy")
+summary(Manovamodel_women, test="Wilks")
+summary(Manovamodel_women, test="Hotelling-Lawley")
+summary.aov(Manovamodel_women)
+```
+
+Following a reviewer's request, we also added attractiveness. Note that the effect is stronger for dominance than it is for attractiveness. In essence it is not surprising that an attractiveness manipulation yields higher ratings in social dominance.
+
+```{r}
+Manovamodel_women_attr <- manova(cbind(Assertiveness, Self_confidence,Extroverted,Influential,Socially_competent,Good_judge_of_character) ~ Dominant_condition*Attractive_condition, data = Data_analysis_women)
+summary(Manovamodel_women_attr)
+summary(Manovamodel_women_attr, test="Roy")
+summary(Manovamodel_women_attr, test="Wilks")
+summary(Manovamodel_women_attr, test="Hotelling-Lawley")
+summary.aov(Manovamodel_women_attr)
+Manovamodel_women_attr$coefficients # check signs.
+```
+
+## Hypothesis tests
+
+```{r}
+Ez_ANOVA_jealousy<-ezANOVA(Data_analysis, dv=Jealousy, wid=ID, between=.(Attractive_condition,Dominant_condition,Gender), detailed=TRUE, type=3)
+Ez_ANOVA_jealousy
+anova_apa(Ez_ANOVA_jealousy, es="ges", format = "rmarkdown")
+```
+
+Same conclusion.
+
+```{r}
+require(dplyr)
+Data_analysis_covar<- Data_analysis %>% filter(!is.na(Mate_value))
+Ez_ANOVA_jealousy_covar<-ezANOVA(Data_analysis_covar, dv=Jealousy, wid=ID, between=.(Attractive_condition,Dominant_condition,Gender), between_covariates = Mate_value, detailed=TRUE, type=3)
+Ez_ANOVA_jealousy_covar
+anova_apa(Ez_ANOVA_jealousy_covar, es="ges", format = "rmarkdown")
+```
+
+
+```{r}
+Ez_ANOVA_jealousy_men<-ezANOVA(Data_analysis_men, dv=Jealousy, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type=3)
+Ez_ANOVA_jealousy_men
+Ez_ANOVA_jealousy_women<-ezANOVA(Data_analysis_women, dv=Jealousy, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type=3)
+Ez_ANOVA_jealousy_women
+anova_apa(Ez_ANOVA_jealousy_men, es="ges", format = "rmarkdown")
+anova_apa(Ez_ANOVA_jealousy_women, es="ges", format = "rmarkdown")
+```
+
+Means and SD.
+
+```{r}
+summary_jealousy_attractiveness_men <- Data_analysis_men  %>% # "Start with the data set
+  group_by(Attractive_condition) %>% # Then group by IV
+  summarize(N = length(Jealousy), # Then summarize each group, these are complete so we can use same N
+            Mean_jeal = mean(Jealousy),
+            SD_jeal = sd(Jealousy),
+            SE_jeal = SD_jeal/sqrt(N)) # Then summarize each group, these are complete so we can use same N
+summary_jealousy_attractiveness_men
+
+summary_jealousy_attractiveness_women <- Data_analysis_women  %>% # "Start with the data set
+  group_by(Attractive_condition) %>% # Then group by IV
+  summarize(N = length(Jealousy), # Then summarize each group, these are complete so we can use same N
+            Mean_jeal = mean(Jealousy),
+            SD_jeal = sd(Jealousy),
+            SE_jeal = SD_jeal/sqrt(N)) # Then summarize each group, these are complete so we can use same N
+summary_jealousy_attractiveness_women
+```
+
+```{r}
+summary_jealousy_dominant_men <- Data_analysis_men  %>% # "Start with the data set
+  group_by(Dominant_condition) %>% # Then group by IV
+  summarize(N = length(Jealousy), # Then summarize each group, these are complete so we can use same N
+            Mean_jeal = mean(Jealousy),
+            SD_jeal = sd(Jealousy),
+            SE_jeal = SD_jeal/sqrt(N)) # Then summarize each group, these are complete so we can use same N
+summary_jealousy_dominant_men
+
+summary_jealousy_dominant_women <- Data_analysis_women  %>% # "Start with the data set
+  group_by(Dominant_condition) %>% # Then group by IV
+  summarize(N = length(Jealousy), # Then summarize each group, these are complete so we can use same N
+            Mean_jeal = mean(Jealousy),
+            SD_jeal = sd(Jealousy),
+            SE_jeal = SD_jeal/sqrt(N)) # Then summarize each group, these are complete so we can use same N
+summary_jealousy_dominant_women
+```
+
+## Figures
+
+Men.
+
+```{r}
+require(ggplot2)
+require(ggthemes)
+require(scales)
+graph_data_men <- describeBy(Data_analysis_men$Jealousy,list(as.factor(Data_analysis_men$Attractive_condition),as.factor(Data_analysis_men$Dominant_condition)), mat=TRUE,digits=2)
+
+graph_data_women <- describeBy(Data_analysis_women$Jealousy,list(as.factor(Data_analysis_women$Attractive_condition),as.factor(Data_analysis_women$Dominant_condition)), mat=TRUE,digits=2)
+
+names(graph_data_men)[names(graph_data_men) == 'group1'] = 'Attractiveness'
+names(graph_data_men)[names(graph_data_men) == 'group2'] = 'Dominance'  
+names(graph_data_women)[names(graph_data_women) == 'group1'] = 'Attractiveness'
+names(graph_data_women)[names(graph_data_women) == 'group2'] = 'Dominance'  
+
+limits = aes(ymax = mean + sd, ymin=mean - sd)
+dodge = position_dodge(width=0.9)
+graph_men_bar<-ggplot(graph_data_men, aes(x = Attractiveness, y = mean, fill = Dominance))+
+  geom_bar(stat='identity', position=dodge)+
+  geom_errorbar(limits, position=dodge, width=0.25) + xlab("Attractiveness condition")+ ylab("Mean Jealousy") + labs(fill="Dominance condition") + theme_tufte(10) + scale_fill_grey(start=.4) + coord_cartesian(ylim=c(1,5))
+graph_men_bar
+# Reference set
+reference_men_mean<-c(3.15,3,3.39,2.44)
+reference_men_SD<-c(1.16,1.25,.85,.98)
+Attractiveness<-c("Attractive","Attractive","Not Attractive", "Not Attractive")
+Dominance<-c("Dominant","Not Dominant","Dominant", "Not Dominant")
+reference_men<-cbind.data.frame(reference_men_mean,reference_men_SD,Attractiveness,Dominance)
+limits = aes(ymax = reference_men_mean + reference_men_SD, ymin=reference_men_mean - reference_men_SD)
+dodge = position_dodge(width=0.9)
+
+graph_men_reference<-ggplot(reference_men, aes(x = Attractiveness, y = reference_men_mean, fill = Dominance))+
+  geom_bar(stat='identity', position=dodge)+ 
+  geom_errorbar(limits, position=dodge, width=0.25) + xlab("Attractiveness condition")+ ylab("Mean Jealousy") + labs(fill="Dominance condition") + theme_tufte(10) + scale_fill_grey(start=.4) + coord_cartesian(ylim=c(1,5))
+graph_men_reference
+require(cowplot)
+plot_grid(graph_men_bar, graph_men_reference, labels = c("A","B"), hjust = -8, label_size = 8,  ncol = 1, align = 'v')
+ggsave("barplot_men.png")
+ggsave("barplot_men.pdf")
+```
+
+Women
+
+```{r}
+require(ggplot2)
+require(ggthemes)
+require(scales)
+graph_data_women <- describeBy(Data_analysis_women$Jealousy,list(as.factor(Data_analysis_women$Attractive_condition),as.factor(Data_analysis_women$Dominant_condition)), mat=TRUE,digits=2)
+
+graph_data_women <- describeBy(Data_analysis_women$Jealousy,list(as.factor(Data_analysis_women$Attractive_condition),as.factor(Data_analysis_women$Dominant_condition)), mat=TRUE,digits=2)
+
+names(graph_data_women)[names(graph_data_women) == 'group1'] = 'Attractiveness'
+names(graph_data_women)[names(graph_data_women) == 'group2'] = 'Dominance'  
+names(graph_data_women)[names(graph_data_women) == 'group1'] = 'Attractiveness'
+names(graph_data_women)[names(graph_data_women) == 'group2'] = 'Dominance'  
+
+limits = aes(ymax = mean + sd, ymin=mean - sd)
+dodge = position_dodge(width=0.9)
+graph_women_bar<-ggplot(graph_data_women, aes(x = Attractiveness, y = mean, fill = Dominance))+
+  geom_bar(stat='identity', position=dodge)+
+  geom_errorbar(limits, position=dodge, width=0.25) + xlab("Attractiveness condition")+ ylab("Mean Jealousy") + labs(fill="Dominance condition") + theme_tufte(10) + scale_fill_grey(start=.4) + coord_cartesian(ylim=c(1,5))
+graph_women_bar
+# Reference set
+reference_women_mean<-c(3.62,3.48,2.47,2.83)
+reference_women_SD<-c(1.12,1.12,1.07,1.34)
+Attractiveness<-c("Attractive","Attractive","Not Attractive", "Not Attractive")
+Dominance<-c("Dominant","Not Dominant","Dominant", "Not Dominant")
+reference_women<-cbind.data.frame(reference_women_mean,reference_women_SD,Attractiveness,Dominance)
+limits = aes(ymax = reference_women_mean + reference_women_SD, ymin=reference_women_mean - reference_women_SD)
+dodge = position_dodge(width=0.9)
+
+graph_women_reference<-ggplot(reference_women, aes(x = Attractiveness, y = reference_women_mean, fill = Dominance))+
+  geom_bar(stat='identity', position=dodge)+ 
+  geom_errorbar(limits, position=dodge, width=0.25) + xlab("Attractiveness condition")+ ylab("Mean Jealousy") + labs(fill="Dominance condition") + theme_tufte(10) + scale_fill_grey(start=.4) + coord_cartesian(ylim=c(1,5))
+graph_women_reference
+require(cowplot)
+plot_grid(graph_women_bar, graph_women_reference, labels = c("A","B"), hjust = -8, label_size = 8,  ncol = 1, align = 'v')
+ggsave("barplot_women.png")
+ggsave("barplot_women.pdf")
+```
+
+
+### Violin plot
+
+This violin plot looks a bit hideous. That is why we opted for the histogram.
+
+```{r}
+
+Data_analysis$Gender<-as.factor(Data_analysis$Gender)
+levels(Data_analysis$Gender) <- c("Men", "Women")
+dodge <- position_dodge(width = 0.7)
+violinplot<-ggplot(Data_analysis, aes(x = Attractive_condition, y = Jealousy, fill=Dominant_condition)) + geom_violin(position=dodge) + geom_boxplot(position=dodge,width = 0.1, outlier.colour=NA) + xlab("Attractiveness condition")+ ylab("Jealousy") + labs(fill="Dominance condition") + theme(legend.position = "top") + facet_grid(~Gender) + scale_fill_grey(start=.4) + theme_tufte(12)
+violinplot
+ggsave("violinplot.png", width= 200, height=200, units="mm")
+```
+
+```{r}
+histogram_men<-ggplot(Data_analysis_men, aes(x=Jealousy)) 
+histogram_men <- histogram_men + geom_histogram(binwidth=.5, colour="black", fill="white") + facet_grid(Attractive_condition~Dominant_condition) + theme_tufte(7.5)
+
+histogram_women<-ggplot(Data_analysis_women, aes(x=Jealousy)) 
+histogram_women <- histogram_women + geom_histogram(binwidth=.5, colour="black", fill="white") + facet_grid(Attractive_condition~Dominant_condition) + theme_tufte(7.5)
+
+plot_grid(histogram_men, histogram_women, labels = c("Men (N=114)","Women (N=225)"), label_size = 7,  ncol = 1, align = 'v')
+ggsave("histogram.png")
+ggsave("histogram.pdf")
+```
+
+
+
+## Additional analyses.
+
+```{r}
+require(coin)
+require(BayesFactor)
+Data_analysis$Attractive_condition<-as.factor(Data_analysis$Attractive_condition)
+Data_analysis$Dominant_condition<-as.factor(Data_analysis$Dominant_condition)
+Data_analysis$Gender<-as.factor(Data_analysis$Gender)
+bf_jealousy <- anovaBF(Jealousy ~ Attractive_condition*Dominant_condition*Gender, data=as.data.frame(Data_analysis))
+bf_jealousy
+1/bf_jealousy 
+independence_test(Jealousy ~ Attractive_condition*Dominant_condition*Gender, data=Data_analysis)
+```
+
+
+
+The independence test is not significant (but _p_ =.06 in independence test for men). 
+
+```{r}
+require(coin)
+require(BayesFactor)
+Data_analysis_men$Attractive_condition<-as.factor(Data_analysis_men$Attractive_condition)
+Data_analysis_men$Dominant_condition<-as.factor(Data_analysis_men$Dominant_condition)
+bf_jealousy_men <- anovaBF(Jealousy ~ Attractive_condition*Dominant_condition, data=as.data.frame(Data_analysis_men))
+bf_jealousy_men
+1/bf_jealousy_men 
+independence_test(Jealousy ~ Attractive_condition*Dominant_condition, data=Data_analysis_men)
+Data_analysis_women$Attractive_condition<-as.factor(Data_analysis_women$Attractive_condition)
+Data_analysis_women$Dominant_condition<-as.factor(Data_analysis_women$Dominant_condition)
+bf_jealousy_women <- anovaBF(Jealousy ~ Attractive_condition*Dominant_condition, data=as.data.frame(Data_analysis_women))
+bf_jealousy_women
+1/bf_jealousy_women # 
+independence_test(Jealousy ~ Attractive_condition*Dominant_condition, data=Data_analysis_women)
+```
+
+
+
+## Bootstrapping.
+
+Note that this will take some time. We cannot specify type of error here.
+
+```{r}
+ezBoot1<-ezBoot(Data_analysis_men, dv=Jealousy, wid=ID, between=Attractive_condition*Dominant_condition, resample_within = F, iterations = 1e3)
+ezBoot2<-ezBoot(Data_analysis_women, dv=Jealousy, wid=ID, between=Attractive_condition*Dominant_condition, resample_within = F, iterations = 1e3)
+```
+
+Plot for bootstrap.
+
+```{r}
+p<-ezPlot2(pred=ezBoot1, x= Attractive_condition,split=Dominant_condition)
+print(p)
+p2<-ezPlot2(pred=ezBoot2, x= Attractive_condition,split=Dominant_condition)
+print(p2)
+```
+
+
+## Robustness check for site of collection.
+
+Some of the lower level interaction effects significant but crucially no support for a significant three-way interaction.
+
+```{r}
+Ez_ANOVA_jealousy_men_check<-ezANOVA(Data_analysis_men, dv=Jealousy, wid=ID, between=.(Attractive_condition,Dominant_condition,Sample), detailed=TRUE, type=3)
+Ez_ANOVA_jealousy_men_check
+Ez_ANOVA_jealousy_women_check<-ezANOVA(Data_analysis_women, dv=Jealousy, wid=ID, between=.(Attractive_condition,Dominant_condition,Sample), detailed=TRUE, type=3)
+Ez_ANOVA_jealousy_women_check
+anova_apa(Ez_ANOVA_jealousy_men_check, es="ges", format = "rmarkdown")
+anova_apa(Ez_ANOVA_jealousy_women_check, es="ges", format = "rmarkdown")
+```
+
+# Study 2
+
+Note that this overrides some of the code, as it is based on the same code as study 1.
+
+## Data Wrangling
+
+Importing the datasets for entire study. These are as they were on Qualtrics, with the exception of the removal of IP addresses, 'preview' completions, and personal codes allowing withdrawal.
+
+```{r}
+require(dplyr)
+require(skimr)
+require(haven)
+Data_online<-read_spss("Study2-Online.sav")
+Data_field<-read_spss("Study2-Field.sav")
+```
+ 
+Q98 is the last question, therefore this indicates completion.
+
+```{r}
+Data_online <- Data_online %>% filter(!is.na(Q98))
+Data_field <- Data_field %>% filter(!is.na(Q98))
+```
+
+Only heterosexual participants included.
+
+```{r}
+Data_online<-Data_online %>% filter(Q6==1)
+Data_field <- Data_field %>% filter(Q6==1)
+```
+
+Age for descriptives.
+
+```{r}
+Age<-c(Data_online$Q5,Data_field$Q5)
+mean(Age)
+sd(Age)
+min(Age)
+max(Age)
+```
+
+Gender for descriptives.
+
+```{r}
+Gender<-c(Data_online$Q4,Data_field$Q4)
+table(Gender)
+prop.table(table(Gender))
+```
+
+Student and romantic relationship for descriptives
+
+```{r}
+Student<-c(Data_online$Q8,Data_field$Q8)
+table(Student)
+prop.table(table(Student))
+Romantic<-c(Data_online$Q7,Data_field$Q7)
+table(Romantic)
+prop.table(table(Romantic))
+``` 
+
+## Subset for analysis
+
+```{r}
+Data_analysis1<- Data_online %>% select(Q4,Q23:Q37,Q39,Q40,Q41,Q42,Q43,Q44,FL_21_DO_Scenario5_attractiveandnotdominantfemale,FL_21_DO_Scenario7_unattractiveanddominantfemale,FL_21_DO_Scenario6_attractiveanddominantfemale,FL_21_DO_Scenario8_unattractiveandnotdominantfemale,FL_17_DO_Scenario_attractiveandnon_dominantmale,FL_17_DO_Scenario3_dominantandunattractivemale,FL_17_DO_Scenario1_attractiveanddominantmale,FL_17_DO_Scenario4_NotDominantandUnattractivemale, Q93:Q98)
+names(Data_analysis1)<-c("Gender","Suspicious","Betrayed","Worried","Distrustful","Jealousy","Rejected","Hurt","Anxious","Angry", "Threatened","Sad","Upset","Attractiveness_check1","Attractiveness_check2","Assertiveness","Self_confidence","Extroverted","Influential","Socially_competent","Good_judge_of_character","Attractive_not_dominant_woman","Unattractive_dominant_woman","Attractive_dominant_woman","Unattractive_not_dominant_woman","Attractive_not_dominant_man","Unattractive_dominant_man","Attractive_dominant_man","Unattractive_not_dominant_man","Mate_value1","Mate_value2", "Mate_value3","Mate_value4", "Mate_value5", "Mate_value6")
+Data_analysis1$Sample<-rep("Online",nrow(Data_analysis1))
+# For some reason qualtrics exports.The label here but not elsewhere Q34.
+Data_analysis2<- Data_field %>% select(Q4,Q23:Q34, Q36:Q37,Q39,Q40,Q41,Q42,Q43,Q44,FL_21_DO_Scenario5_attractiveandnotdominantfemale,FL_21_DO_Scenario7_unattractiveanddominantfemale,FL_21_DO_Scenario6_attractiveanddominantfemale,FL_21_DO_Scenario8_unattractiveandnotdominantfemale,FL_17_DO_Scenario_attractiveandnon_dominantmale,FL_17_DO_Scenario3_dominantandunattractivemale,FL_17_DO_Scenario1_attractiveanddominantmale,FL_17_DO_Scenario4_NotDominantandUnattractivemale, Q93:Q98)
+names(Data_analysis2)<-c("Gender","Suspicious","Betrayed","Worried","Distrustful","Jealousy","Rejected","Hurt","Anxious","Angry", "Threatened","Sad","Upset","Attractiveness_check1","Attractiveness_check2","Assertiveness","Self_confidence","Extroverted","Influential","Socially_competent","Good_judge_of_character","Attractive_not_dominant_woman","Unattractive_dominant_woman","Attractive_dominant_woman","Unattractive_not_dominant_woman","Attractive_not_dominant_man","Unattractive_dominant_man","Attractive_dominant_man","Unattractive_not_dominant_man", "Mate_value1","Mate_value2", "Mate_value3","Mate_value4", "Mate_value5", "Mate_value6")
+Data_analysis2$Sample<-rep("Field",nrow(Data_analysis2))
+Data_analysis<-rbind(Data_analysis1,Data_analysis2)
+```
+
+## Recode to get the 2x2 condition variable. 
+
+Using "case_when". Also generate ID
+
+```{r}
+Data_analysis<-Data_analysis %>% mutate(Attractive_condition=case_when(Attractive_not_dominant_woman == 1 | Attractive_dominant_woman == 1 | Attractive_not_dominant_man == 1 | Attractive_dominant_man == 1 ~ "Attractive", TRUE ~ "Not Attractive"), Dominant_condition=case_when(Attractive_dominant_woman == 1 | Unattractive_dominant_woman == 1 | Attractive_dominant_man == 1 | Unattractive_dominant_man == 1 ~ "Dominant", TRUE ~ "Not Dominant"), ID=1:nrow(Data_analysis))
+write.csv(Data_analysis, "Dataset2.csv", row.names = F)
+write_sav(Data_analysis, "Dataset2.sav")
+```
+
+## Cronbach's alpha.
+
+```{r}
+require(psych)
+alpha<- Data_analysis %>% dplyr::select(Mate_value1:Mate_value6)
+require(psych)
+psych::alpha(as.data.frame(alpha))
+```
+
+Sum scale.
+
+```{r}
+Data_analysis<-Data_analysis %>% mutate(Mate_value= Mate_value1+Mate_value2+Mate_value3+Mate_value4+Mate_value5+Mate_value6)
+```
+
+There was no significant difference between the genders in mate value, therefore there is no value of including mate value as a covariate. Note that there is one missing value.
+
+```{r}
+t.test(Mate_value~Gender, data=Data_analysis)
+```
+
+```{r}
+describeBy(Data_analysis$Mate_value, Data_analysis$Gender)
+```
+
+
+```{r}
+library(lsr)
+cohensD(Data_analysis$Mate_value~ Data_analysis$Gender)
+```
+```{r}
+library(compute.es)
+des(d=.2240383, n.1=178, n.2=277)
+```
+
+Similar to Dijkstra et al. 1998, there were no significant effects of conditions on mate value (but _p_=.09 for attractiveness). 
+
+```{r}
+t.test(Mate_value~Attractive_condition, data=Data_analysis)
+t.test(Mate_value~Dominant_condition, data=Data_analysis)
+```
+
+## Manipulation checks.
+
+Using the 'ez' package.
+
+```{r}
+require(dplyr)
+Data_analysis_men<- Data_analysis %>% filter(Gender==1)
+Data_analysis_women<- Data_analysis %>% filter(Gender==2)
+
+```
+
+
+```{r}
+require(ez)
+require(papaja)
+Ez_ANOVA1<-ezANOVA(Data_analysis_men, dv=Attractiveness_check1, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type = 3)
+Ez_ANOVA1
+Ez_ANOVA2<-ezANOVA(Data_analysis_women, dv=Attractiveness_check1, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type = 3)
+Ez_ANOVA2
+Ez_ANOVA3<-ezANOVA(Data_analysis_men, dv=Attractiveness_check2, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type = 3)
+Ez_ANOVA3
+Ez_ANOVA4<-ezANOVA(Data_analysis_women, dv=Attractiveness_check2, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type = 3)
+Ez_ANOVA4
+```
+
+```{r}
+require(apa)
+anova_apa(Ez_ANOVA1, es="ges", format = "rmarkdown")
+anova_apa(Ez_ANOVA2, es="ges", format = "rmarkdown")
+anova_apa(Ez_ANOVA3, es="ges", format = "rmarkdown")
+anova_apa(Ez_ANOVA4, es="ges", format = "rmarkdown")
+```
+
+```{r}
+summary_attractive_men <- Data_analysis_men  %>% # "Start with the data set
+  group_by(Attractive_condition) %>% # Then group by IV
+  summarize(N = length(Attractiveness_check1), # Then summarize each group, these are complete so we can use same N
+            Mean_att1 = mean(Attractiveness_check1),
+            SD_att1 = sd(Attractiveness_check1),
+            SE_att1 = SD_att1/sqrt(N), # Then summarize each group, these are complete so we can use same N
+            Mean_att2 = mean(Attractiveness_check2),
+            SD_att2 = sd(Attractiveness_check2),
+            SE_att2 = SD_att2/sqrt(N)) 
+summary_attractive_men
+
+summary_attractive_women <- Data_analysis_women  %>% # "Start with the data set
+  group_by(Attractive_condition) %>% # Then group by IV
+  summarize(N = length(Attractiveness_check1), # Then summarize each group, these are complete so we can use same N
+            Mean_att1 = mean(Attractiveness_check1),
+            SD_att1 = sd(Attractiveness_check1),
+            SE_att1 = SD_att1/sqrt(N), # Then summarize each group, these are complete so we can use same N
+            Mean_att2 = mean(Attractiveness_check2),
+            SD_att2 = sd(Attractiveness_check2),
+            SE_att2 = SD_att2/sqrt(N)) 
+summary_attractive_women
+
+```
+
+MANOVA for dominance (note no checks for assumption tests, but these have also not been reported in Dijkstra & Buunk, 1998).
+
+```{r}
+Manovamodel_men <- manova(cbind(Assertiveness,Self_confidence,Extroverted,Influential,Socially_competent,Good_judge_of_character) ~ Dominant_condition, data = Data_analysis_men)
+summary(Manovamodel_men)
+summary(Manovamodel_men, test="Roy")
+summary(Manovamodel_men, test="Wilks")
+summary(Manovamodel_men, test="Hotelling-Lawley")
+summary.aov(Manovamodel_men)
+```
+
+Following a reviewer's request, we also added attractiveness. 
+
+```{r}
+Manovamodel_men_attr <- manova(cbind(Assertiveness,Self_confidence,Extroverted,Influential,Socially_competent,Good_judge_of_character) ~ Dominant_condition*Attractive_condition, data = Data_analysis_men)
+summary(Manovamodel_men_attr)
+summary(Manovamodel_men_attr, test="Roy")
+summary(Manovamodel_men_attr, test="Wilks")
+summary(Manovamodel_men_attr, test="Hotelling-Lawley")
+summary.aov(Manovamodel_men_attr)
+Manovamodel_men_attr$coefficients # check signs.
+```
+
+Women.
+
+```{r}
+Manovamodel_women <- manova(cbind(Assertiveness,Self_confidence,Extroverted,Influential,Socially_competent,Good_judge_of_character) ~ Dominant_condition, data = Data_analysis_women)
+summary(Manovamodel_women)
+summary(Manovamodel_women, test="Roy")
+summary(Manovamodel_women, test="Wilks")
+summary(Manovamodel_women, test="Hotelling-Lawley")
+summary.aov(Manovamodel_women)
+```
+
+Following a reviewer's request, we also added attractiveness. Note that unlike Study 1, there is no effect of attractiveness in this MANOVA.
+
+```{r}
+Manovamodel_women_attr <- manova(cbind(Assertiveness,Self_confidence,Extroverted,Influential,Socially_competent,Good_judge_of_character) ~ Dominant_condition*Attractive_condition, data = Data_analysis_women)
+summary(Manovamodel_women_attr)
+summary(Manovamodel_women_attr, test="Roy")
+summary(Manovamodel_women_attr, test="Wilks")
+summary(Manovamodel_women_attr, test="Hotelling-Lawley")
+summary.aov(Manovamodel_women_attr)
+Manovamodel_women_attr$coefficients # check signs.
+```
+
+## Hypothesis tests
+
+```{r}
+Ez_ANOVA_jealousy<-ezANOVA(Data_analysis, dv=Jealousy, wid=ID, between=.(Attractive_condition,Dominant_condition,Gender), detailed=TRUE, type=3)
+Ez_ANOVA_jealousy
+anova_apa(Ez_ANOVA_jealousy, es="ges", format = "rmarkdown")
+```
+
+Same conclusion.
+
+```{r}
+require(dplyr)
+Data_analysis_covar<- Data_analysis %>% filter(!is.na(Mate_value))
+Ez_ANOVA_jealousy_covar<-ezANOVA(Data_analysis_covar, dv=Jealousy, wid=ID, between=.(Attractive_condition,Dominant_condition,Gender), between_covariates = Mate_value, detailed=TRUE, type=3)
+Ez_ANOVA_jealousy_covar
+anova_apa(Ez_ANOVA_jealousy_covar, es="ges", format = "rmarkdown")
+```
+
+
+```{r}
+Ez_ANOVA_jealousy_men<-ezANOVA(Data_analysis_men, dv=Jealousy, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type=3)
+Ez_ANOVA_jealousy_men
+Ez_ANOVA_jealousy_women<-ezANOVA(Data_analysis_women, dv=Jealousy, wid=ID, between=Attractive_condition*Dominant_condition, detailed=TRUE, type=3)
+Ez_ANOVA_jealousy_women
+anova_apa(Ez_ANOVA_jealousy_men, es="ges", format = "rmarkdown")
+anova_apa(Ez_ANOVA_jealousy_women, es="ges", format = "rmarkdown")
+```
+
+Means and SD.
+
+```{r}
+summary_jealousy_attractiveness_men <- Data_analysis_men  %>% # "Start with the data set
+  group_by(Attractive_condition) %>% # Then group by IV
+  summarize(N = length(Jealousy), # Then summarize each group, these are complete so we can use same N
+            Mean_jeal = mean(Jealousy),
+            SD_jeal = sd(Jealousy),
+            SE_jeal = SD_jeal/sqrt(N)) # Then summarize each group, these are complete so we can use same N
+summary_jealousy_attractiveness_men
+
+summary_jealousy_attractiveness_women <- Data_analysis_women  %>% # "Start with the data set
+  group_by(Attractive_condition) %>% # Then group by IV
+  summarize(N = length(Jealousy), # Then summarize each group, these are complete so we can use same N
+            Mean_jeal = mean(Jealousy),
+            SD_jeal = sd(Jealousy),
+            SE_jeal = SD_jeal/sqrt(N)) # Then summarize each group, these are complete so we can use same N
+summary_jealousy_attractiveness_women
+```
+
+```{r}
+summary_jealousy_dominant_men <- Data_analysis_men  %>% # "Start with the data set
+  group_by(Dominant_condition) %>% # Then group by IV
+  summarize(N = length(Jealousy), # Then summarize each group, these are complete so we can use same N
+            Mean_jeal = mean(Jealousy),
+            SD_jeal = sd(Jealousy),
+            SE_jeal = SD_jeal/sqrt(N)) # Then summarize each group, these are complete so we can use same N
+summary_jealousy_dominant_men
+
+summary_jealousy_dominant_women <- Data_analysis_women  %>% # "Start with the data set
+  group_by(Dominant_condition) %>% # Then group by IV
+  summarize(N = length(Jealousy), # Then summarize each group, these are complete so we can use same N
+            Mean_jeal = mean(Jealousy),
+            SD_jeal = sd(Jealousy),
+            SE_jeal = SD_jeal/sqrt(N)) # Then summarize each group, these are complete so we can use same N
+summary_jealousy_dominant_women
+```
+
+## Figures
+
+Men.
+
+```{r}
+require(ggplot2)
+require(ggthemes)
+require(scales)
+graph_data_men <- describeBy(Data_analysis_men$Jealousy,list(as.factor(Data_analysis_men$Attractive_condition),as.factor(Data_analysis_men$Dominant_condition)), mat=TRUE,digits=2)
+
+graph_data_women <- describeBy(Data_analysis_women$Jealousy,list(as.factor(Data_analysis_women$Attractive_condition),as.factor(Data_analysis_women$Dominant_condition)), mat=TRUE,digits=2)
+
+names(graph_data_men)[names(graph_data_men) == 'group1'] = 'Attractiveness'
+names(graph_data_men)[names(graph_data_men) == 'group2'] = 'Dominance'  
+names(graph_data_women)[names(graph_data_women) == 'group1'] = 'Attractiveness'
+names(graph_data_women)[names(graph_data_women) == 'group2'] = 'Dominance'  
+
+limits = aes(ymax = mean + sd, ymin=mean - sd)
+dodge = position_dodge(width=0.9)
+graph_men_bar<-ggplot(graph_data_men, aes(x = Attractiveness, y = mean, fill = Dominance))+
+  geom_bar(stat='identity', position=dodge)+
+  geom_errorbar(limits, position=dodge, width=0.25) + xlab("Attractiveness condition")+ ylab("Mean Jealousy") + labs(fill="Dominance condition") + theme_tufte(10) + scale_fill_grey(start=.4) + coord_cartesian(ylim=c(1,5))
+graph_men_bar
+# Reference set
+reference_men_mean<-c(3.15,3,3.39,2.44)
+reference_men_SD<-c(1.16,1.25,.85,.98)
+Attractiveness<-c("Attractive","Attractive","Not Attractive", "Not Attractive")
+Dominance<-c("Dominant","Not Dominant","Dominant", "Not Dominant")
+reference_men<-cbind.data.frame(reference_men_mean,reference_men_SD,Attractiveness,Dominance)
+limits = aes(ymax = reference_men_mean + reference_men_SD, ymin=reference_men_mean - reference_men_SD)
+dodge = position_dodge(width=0.9)
+
+graph_men_reference<-ggplot(reference_men, aes(x = Attractiveness, y = reference_men_mean, fill = Dominance))+
+  geom_bar(stat='identity', position=dodge)+ 
+  geom_errorbar(limits, position=dodge, width=0.25) + xlab("Attractiveness condition")+ ylab("Mean Jealousy") + labs(fill="Dominance condition") + theme_tufte(10) + scale_fill_grey(start=.4) + coord_cartesian(ylim=c(1,5))
+graph_men_reference
+require(cowplot)
+plot_grid(graph_men_bar, graph_men_reference, labels = c("A","B"), hjust = -8, label_size = 8,  ncol = 1, align = 'v')
+ggsave("barplot_men_2.png")
+ggsave("barplot_men_2.pdf")
+```
+
+Women
+
+```{r}
+require(ggplot2)
+require(ggthemes)
+require(scales)
+graph_data_women <- describeBy(Data_analysis_women$Jealousy,list(as.factor(Data_analysis_women$Attractive_condition),as.factor(Data_analysis_women$Dominant_condition)), mat=TRUE,digits=2)
+
+graph_data_women <- describeBy(Data_analysis_women$Jealousy,list(as.factor(Data_analysis_women$Attractive_condition),as.factor(Data_analysis_women$Dominant_condition)), mat=TRUE,digits=2)
+
+names(graph_data_women)[names(graph_data_women) == 'group1'] = 'Attractiveness'
+names(graph_data_women)[names(graph_data_women) == 'group2'] = 'Dominance'  
+names(graph_data_women)[names(graph_data_women) == 'group1'] = 'Attractiveness'
+names(graph_data_women)[names(graph_data_women) == 'group2'] = 'Dominance'  
+
+limits = aes(ymax = mean + sd, ymin=mean - sd)
+dodge = position_dodge(width=0.9)
+graph_women_bar<-ggplot(graph_data_women, aes(x = Attractiveness, y = mean, fill = Dominance))+
+  geom_bar(stat='identity', position=dodge)+
+  geom_errorbar(limits, position=dodge, width=0.25) + xlab("Attractiveness condition")+ ylab("Mean Jealousy") + labs(fill="Dominance condition") + theme_tufte(10) + scale_fill_grey(start=.4) + coord_cartesian(ylim=c(1,5))
+graph_women_bar
+# Reference set
+reference_women_mean<-c(3.62,3.48,2.47,2.83)
+reference_women_SD<-c(1.12,1.12,1.07,1.34)
+Attractiveness<-c("Attractive","Attractive","Not Attractive", "Not Attractive")
+Dominance<-c("Dominant","Not Dominant","Dominant", "Not Dominant")
+reference_women<-cbind.data.frame(reference_women_mean,reference_women_SD,Attractiveness,Dominance)
+limits = aes(ymax = reference_women_mean + reference_women_SD, ymin=reference_women_mean - reference_women_SD)
+dodge = position_dodge(width=0.9)
+
+graph_women_reference<-ggplot(reference_women, aes(x = Attractiveness, y = reference_women_mean, fill = Dominance))+
+  geom_bar(stat='identity', position=dodge)+ 
+  geom_errorbar(limits, position=dodge, width=0.25) + xlab("Attractiveness condition")+ ylab("Mean Jealousy") + labs(fill="Dominance condition") + theme_tufte(10) + scale_fill_grey(start=.4) + coord_cartesian(ylim=c(1,5))
+graph_women_reference
+require(cowplot)
+plot_grid(graph_women_bar, graph_women_reference, labels = c("A","B"), hjust = -8, label_size = 8,  ncol = 1, align = 'v')
+ggsave("barplot_women_2.png")
+ggsave("barplot_women_2.pdf")
+```
+
+### Violin plot
+
+This violin plot looks a bit hideous. That is why we opted for the histogram.
+
+```{r}
+
+Data_analysis$Gender<-as.factor(Data_analysis$Gender)
+levels(Data_analysis$Gender) <- c("Men", "Women")
+dodge <- position_dodge(width = 0.7)
+violinplot<-ggplot(Data_analysis, aes(x = Attractive_condition, y = Jealousy, fill=Dominant_condition)) + geom_violin(position=dodge) + geom_boxplot(position=dodge,width = 0.1, outlier.colour=NA) + xlab("Attractiveness condition")+ ylab("Jealousy") + labs(fill="Dominance condition") + theme(legend.position = "top") + facet_grid(~Gender) + scale_fill_grey(start=.4) + theme_tufte(12)
+violinplot
+ggsave("violinplot_2.png", width= 200, height=200, units="mm")
+```
+
+```{r}
+histogram_men<-ggplot(Data_analysis_men, aes(x=Jealousy)) 
+histogram_men <- histogram_men + geom_histogram(binwidth=.5, colour="black", fill="white") + facet_grid(Attractive_condition~Dominant_condition) + theme_tufte(7.5)
+
+histogram_women<-ggplot(Data_analysis_women, aes(x=Jealousy)) 
+histogram_women <- histogram_women + geom_histogram(binwidth=.5, colour="black", fill="white") + facet_grid(Attractive_condition~Dominant_condition) + theme_tufte(7.5)
+
+plot_grid(histogram_men, histogram_women, labels = c("Men (N=178)","Women (N=278)"), label_size = 7,  ncol = 1, align = 'v')
+ggsave("histogram_2.png")
+ggsave("histogram_2.pdf")
+```
+
+### Additional analyses
+
+independence test suggests no effect.
+
+```{r}
+require(coin)
+require(BayesFactor)
+Data_analysis$Attractive_condition<-as.factor(Data_analysis$Attractive_condition)
+Data_analysis$Dominant_condition<-as.factor(Data_analysis$Dominant_condition)
+Data_analysis$Gender<-as.factor(Data_analysis$Gender)
+bf_jealousy <- anovaBF(Jealousy ~ Attractive_condition*Dominant_condition*Gender, data=as.data.frame(Data_analysis))
+bf_jealousy
+1/bf_jealousy 
+independence_test(Jealousy ~ Attractive_condition*Dominant_condition*Gender, data=Data_analysis)
+```
+
+
+
+```{r}
+require(coin)
+require(BayesFactor)
+Data_analysis_men$Attractive_condition<-as.factor(Data_analysis_men$Attractive_condition)
+Data_analysis_men$Dominant_condition<-as.factor(Data_analysis_men$Dominant_condition)
+bf_jealousy_men <- anovaBF(Jealousy ~ Attractive_condition*Dominant_condition, data=as.data.frame(Data_analysis_men))
+bf_jealousy_men
+1/bf_jealousy_men 
+independence_test(Jealousy ~ Attractive_condition*Dominant_condition, data=Data_analysis_men)
+Data_analysis_women$Attractive_condition<-as.factor(Data_analysis_women$Attractive_condition)
+Data_analysis_women$Dominant_condition<-as.factor(Data_analysis_women$Dominant_condition)
+bf_jealousy_women <- anovaBF(Jealousy ~ Attractive_condition*Dominant_condition, data=as.data.frame(Data_analysis_women))
+bf_jealousy_women
+1/bf_jealousy_women # 
+independence_test(Jealousy ~ Attractive_condition*Dominant_condition, data=Data_analysis_women)
+```
+
+
+
+# Meta-analysis (old version).
+
+This was the meta-analysis from a previous version.
+We can use the guidance from http://www.stat-help.com/spreadsheets.html to convert everything to a common effect 'r'. Following the recommendation, we can take square root of $\eta^2_p$ to obtain Pearson r. We use the sample sizes as N to provide the weights.
+
+## attractiveness
+
+### Build up a data frame
+
+The original effect size is derived from the _F_-tests, see the accompanying document. 
+
+```{r}
+require(esc)
+require(metafor)
+r_original_att<-sqrt(.0332) # Partial eta squared to r. (Note that this treats partial eta squared as eta squared)
+r_att1<-pearsons_r(eta=0.0194012518) # could just use ESC as well
+r_att2<-pearsons_r(eta=0.0027411646)
+N_original<-152
+N_1<-339
+N_2<-456
+r_i_attract<-c(r_original_att,r_att1,r_att2)
+N_i<-c(N_original,N_1,N_2)
+Labels<-c("Dijkstra & Buunk 1998: attractiveness*gender (N=152)", "Study 1: attractiveness*gender (N=339)", "Study 2: attractiveness*gender (N=456)")
+correlations_1<-cbind.data.frame(r_i_attract, N_i, Labels)
+```
+Actual analysis
+```{r}
+require(metafor)
+eszcor <- escalc(measure="ZCOR", ri=r_i_attract, ni=N_i, data=correlations_1)
+REmodel_attract <-rma(yi=yi, vi=vi, data=eszcor, method="REML", slab=Labels)
+REmodel_attract
+postscript("forest1.eps",  horizontal = FALSE, onefile = FALSE, paper = "special", height = 12, width = 12)
+par(mar=c(5,4,0,6))
+forest(REmodel_attract)
+dev.off()
+```
+
+
+```{r}
+require(bayesmeta)
+ma01 <- bayesmeta(y= eszcor[,"yi"], sigma= sqrt(eszcor[,"vi"]), mu.prior.mean = 0, mu.prior.sd = 4,
+ tau.prior = function(t){dhalfnormal(t,scale=0.5)})
+ma01
+forestplot(ma01)
+ma01$bayesfactor[1] # Bayes factor
+ma01$bayesfactor[2] # minimum bayes factor
+```
+## Dominance
+
+```{r}
+require(esc)
+require(metafor)
+r_original_dom<-sqrt(.02646373) # Partial eta squared to r. (Note that this treats partial eta squared as eta squared)
+r_dom1<-pearsons_r(eta=0.0043368855) # could just use ESC as well
+r_dom2<-pearsons_r(eta=0.0003447257)
+N_original<-152
+N_1<-339
+N_2<-456
+r_i_dom<-c(r_original_dom,r_dom1,r_dom2)
+N_i<-c(N_original,N_1,N_2)
+Labels2<-c("Dijkstra & Buunk 1998: dominance*gender (N=152)", "Study 1: dominance*gender (N=339)", "Study 2: dominance*gender (N=456)")
+correlations_2<-cbind.data.frame(r_i_dom, N_i, Labels2)
+```
+
+```{r}
+require(metafor)
+eszcor2 <- escalc(measure="ZCOR", ri=r_i_dom, ni=N_i, data=correlations_2)
+REmodel_dom <-rma(yi=yi, vi=vi, data=eszcor2, method="REML", slab=Labels2)
+REmodel_dom
+postscript("forest2.eps",  horizontal = FALSE, onefile = FALSE, paper = "special", height = 12, width = 12)
+par(mar=c(5,4,0,6))
+forest(REmodel_dom)
+dev.off()
+```
+
+# Meta-analysis (new version).
+
+Following review, we were asked to conduct a more complete meta-analysis. The spreadsheets provided
+
+As before we can convert everything to a common effect size, Pearson _r_ with N as weights (but note that for those papers relying on a comparison between genders in terms of Pearson correlations, SE was calculated via Fisher's _r_ to Z transformation, this leads to a weighing down of the effect size as here we use that estimate rather than N of the study. This applies to two estimates, and favours the effect). For completeness, we also provide the meta-analysis with and without the transform.
+
+It is also important to bear in mind that the current meta-analyses weighs the effects from an interaction model similarly as those from a main effects model and thus if anything will likely be overoptimistic. Finally, note that the effect size for our studies and the Dijkstra & Buunk paper was calculated in the above sections.
+
+## Attractiveness
+
+```{r}
+require(readxl)
+attract_meta<-read_excel("meta-analysis_attract.xlsx")
+```
+
+```{r}
+require(metafor)
+eszcor <- escalc(measure="ZCOR", ri=r, ni=N, data=attract_meta)
+REmodel_attract_2 <-rma(yi=yi, vi=vi, data=eszcor, method="REML", slab=Label)
+REmodel_attract_2
+postscript("forest1_new.eps",  horizontal = FALSE, onefile = FALSE, paper = "special", height = 12, width = 12)
+par(mar=c(5,4,0,6))
+metafor::forest(REmodel_attract_2, addcred=T)
+dev.off()
+```
+
+No evidence for publication bias. Relatively robust to removals of single studies
+
+```{r}
+funnel(REmodel_attract_2)
+regtest(REmodel_attract_2)
+leave1out(REmodel_attract_2) # leave one out validation.
+```
+
+No significant effect of 'Buunk author or not' on unexplained variation in Q. Though one question whether the number of studies suffices.
+
+```{r}
+res <- rma(yi, vi, mods = ~Buunk, data=eszcor)
+summary(res)
+```
+
+```{r}
+require(bayesmeta)
+ma02 <- bayesmeta(y= eszcor[,"yi"], sigma= sqrt(eszcor[,"vi"]), mu.prior.mean = 0, mu.prior.sd = 4,
+ tau.prior = function(t){dhalfnormal(t,scale=0.5)})
+ma02
+forestplot(ma02)
+ma02$bayesfactor[1] # Bayes factor
+ma02$bayesfactor[2] # minimum bayes factor
+```
+
+### Check if N is used for Fisher's r to Z transform.
+
+**This analysis is reported in the paper**
+
+A minimal shift _r_= .22 with 95% CI = .151 to .297 . This corroborates the above analyses and shows that in this case it does not matter if one uses N derived from Fisher's transform or raw N. As in the end this is more logically consistent. We decided to report these meta-analysis
+
+
+```{r}
+require(readxl)
+attract_meta2<-read_excel("meta-analysis_attract-N_marelich.xlsx")
+```
+
+```{r}
+require(metafor)
+eszcor <- escalc(measure="ZCOR", ri=r, ni=N, data=attract_meta2)
+REmodel_attract_3 <-rma(yi=yi, vi=vi, data=eszcor, method="REML", slab=Label)
+REmodel_attract_3
+postscript("forest1_new_m.eps",  horizontal = FALSE, onefile = FALSE, paper = "special", height = 12, width = 12)
+par(mar=c(5,4,0,6))
+metafor::forest(REmodel_attract_3,alim = c(-1,1), addcred=T)
+dev.off()
+```
+
+No significant effect of 'Buunk author or not' on unexplained variation in Q.
+
+```{r}
+funnel(REmodel_attract_3)
+regtest(REmodel_attract_3)
+leave1out(REmodel_attract_3) # leave one out validation.
+```
+
+```{r}
+res <- rma(yi, vi, mods = ~Buunk, data=eszcor)
+summary(res)
+```
+
+```{r}
+require(bayesmeta)
+ma03 <- bayesmeta(y= eszcor[,"yi"], sigma= sqrt(eszcor[,"vi"]), mu.prior.mean = 0, mu.prior.sd = 4,
+ tau.prior = function(t){dhalfnormal(t,scale=0.5)})
+ma03
+forestplot(ma03)
+ma03$bayesfactor[1] # Bayes factor
+ma03$bayesfactor[2] # minimum bayes factor
+```
+
+### BRMS Meta-analysis
+
+```{r}
+require(brms)
+require(brmstools)
+eszcor$obs<-1:nrow(eszcor)
+model_fisher_attract <- brm(
+  yi | se(sqrt(1 / (N - 3))) ~ 1 + (1|obs), 
+  data = eszcor, family = gaussian(), 
+  prior = c(
+    prior(normal(0, 10), "Intercept"),
+    prior(student_t(3, 0, 10), "sd")
+  ),
+  control = list(adapt_delta = 0.95),
+  chains = 2, cores = 2, iter = 4000, warmup = 1000
+)
+```
+
+```{r}
+plot(model_fisher_attract)
+```
+
+```{r}
+pp_check(model_fisher_attract, nsamples = 150)
+```
+
+```{r}
+summary(model_fisher_attract)
+```
+
+```{r}
+require(ggthemes)
+brms_forest<-brmstools::forest(model_fisher_attract)
+brms_forest + scale_x_continuous("Fisher transformed correlation", limits = c(-.8, .8)) + ylab("Study") + 
+    theme_tufte()
+```
+
+## Dominance 
+
+```{r}
+require(readxl)
+dominance_meta<-read_excel("meta-analysis_dominance.xlsx")
+```
+
+```{r}
+require(metafor)
+eszcor <- escalc(measure="ZCOR", ri=r, ni=N, data=dominance_meta)
+REmodel_dominance_2 <-rma(yi=yi, vi=vi, data=eszcor, method="REML", slab=Label)
+REmodel_dominance_2
+postscript("forest2_new.eps",  horizontal = FALSE, onefile = FALSE, paper = "special", height = 12, width = 12)
+par(mar=c(5,4,0,6))
+metafor::forest(REmodel_dominance_2,alim = c(-1,1), addcred=T)
+dev.off()
+```
+
+```{r}
+funnel(REmodel_dominance_2)
+regtest(REmodel_dominance_2)
+leave1out(REmodel_dominance_2) # leave one out validation.
+```
+
+We note that there is substantial heterogeneity but it likely is not sensible at this stage to examine candidate variables for explaining this heterogeneity. (Also note that all but 3 studies do not share Buunk as an author).
+
+### Drop Buunk et al.(2011)
+
+Following a reviewer request we were asked to drop Argentina and Spain from the analysis as the measure could contain 'feminine' aspects. It is already clear from the leave-one-out validation that this will likely not matter for our overall conclusion.
+
+```{r}
+dominance_meta_without_Buunk_2011<- dominance_meta %>% slice(-c(4,5)) # These are studies in row 4,5
+```
+
+```{r}
+require(metafor)
+eszcor3 <- escalc(measure="ZCOR", ri=r, ni=N, data=dominance_meta_without_Buunk_2011)
+REmodel_dominance_3 <-rma(yi=yi, vi=vi, data=eszcor3, method="REML", slab=Label)
+REmodel_dominance_3
+postscript("forest3_without_buunk2011.eps",  horizontal = FALSE, onefile = FALSE, paper = "special", height = 12, width = 12)
+par(mar=c(5,4,0,6))
+metafor::forest(REmodel_dominance_3,alim = c(-1,1), addcred=T)
+dev.off()
+```
+
+### Bayesian meta-analysis - dominance.
+
+
+```{r}
+require(bayesmeta)
+ma04 <- bayesmeta(y= eszcor[,"yi"], sigma= sqrt(eszcor[,"vi"]), mu.prior.mean = 0, mu.prior.sd = 4,
+ tau.prior = function(t){dhalfnormal(t,scale=0.5)})
+ma04
+forestplot(ma04)
+ma04$bayesfactor[1] # Bayes factor
+ma04$bayesfactor[2] # minimum bayes factor
+```
+
+### BRMS Meta-analysis: dominance
+
+```{r}
+require(brms)
+require(brmstools)
+eszcor$obs<-1:nrow(eszcor) # Observation (but label does job)
+model_fisher_dom <- brm(
+  yi | se(sqrt(1 / (N - 3))) ~ 1 + (1|Label), 
+  data = eszcor, family = gaussian(), 
+  prior = c(
+    prior(normal(0, 10), "Intercept"),
+    prior(student_t(3, 0, 10), "sd")
+  ),
+  control = list(adapt_delta = 0.95),
+  chains = 2, cores = 2, iter = 4000, warmup = 1000
+)
+```
+
+```{r}
+plot(model_fisher_dom)
+```
+
+
+```{r}
+pp_check(model_fisher_dom, nsamples = 150)
+```
+
+
+```{r}
+summary(model_fisher_dom)
+```
+
+```{r}
+require(ggthemes)
+brms_forest<-brmstools::forest(model_fisher_dom)
+brms_forest + scale_x_continuous("Fisher transformed correlation", limits = c(-.8, .8)) + ylab("Study") + 
+    theme_tufte()
+```
+
+
+# Session info.
+
+
+```{r}
+#/ __| | | |/ __/ __/ _ \/ __/ __|
+#\__ \ |_| | (_| (_|  __/\__ \__ \
+#|___/\__,_|\___\___\___||___/___/
+sessionInfo()
+```
+
+
+
+
+
+
+
