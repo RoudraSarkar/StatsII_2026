@@ -1,0 +1,236 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{graphicx,textcomp}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage[reqno]{amsmath}
+\usepackage{amsthm}
+\usepackage{fancyvrb}
+\usepackage{amssymb,enumerate}
+\usepackage[all]{xy}
+\usepackage{endnotes}
+\usepackage{lscape}
+\newtheorem{com}{Comment}
+\usepackage{float}
+\usepackage{hyperref}
+\newtheorem{lem} {Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{cor}{Corollary}
+\newtheorem{obs}{Observation}
+\usepackage[compact]{titlesec}
+\usepackage{dcolumn}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{multirow}
+\usepackage{xcolor}
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\definecolor{light-gray}{gray}{0.65}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=mystyle}
+\newcommand{\Sref}[1]{Section~\ref{#1}}
+\newtheorem{hyp}{Hypothesis}
+
+\title{Problem Set 4}
+\date{Due: April 10, 2026}
+\author{Applied Stats II}
+
+
+\begin{document}
+	\maketitle
+	\section*{Instructions}
+	\begin{itemize}
+	\item Please show your work! You may lose points by simply writing in the answer. If the problem requires you to execute commands in \texttt{R}, please include the code you used to get your answers. Please also include the \texttt{.R} file that contains your code. If you are not sure if work needs to be shown for a particular problem, please ask.
+	\item Your homework should be submitted electronically on GitHub in \texttt{.pdf} form.
+	\item This problem set is due before 23:59 on Friday April 10, 2026. No late assignments will be accepted.
+
+	\end{itemize}
+
+	\vspace{.25cm}
+\section*{Question 1}
+\vspace{.25cm}
+\noindent We're interested in modeling the historical causes of child mortality. We have data from 26855 children born in Skellefteå, Sweden from 1850 to 1884. Using the "child" dataset in the \texttt{eha} library, fit a Cox Proportional Hazard model using mother's age and infant's gender as covariates. Present and interpret the output.
+
+	\lstinputlisting[language=R, firstline=41,lastline=59]{PS04_RS.r} 
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Cox Proportional Hazards Model Summary}
+		\label{tab:cox_model}
+		\begin{tabular}{lcccccc}
+			\hline\hline
+			& \multicolumn{5}{c}{Coefficients} \\
+			\cline{2-6}
+			Variable & Coef & Exp(coef) & SE(coef) & $z$ & $p$-value \\
+			\hline
+			\texttt{m.age}      & 0.007617 & 1.007646 & 0.002128 &  3.580 & 0.000344 $^{***}$ \\
+			\texttt{sex}female  & -0.082215 & 0.921074 & 0.026743 & -3.074 & 0.002110 $^{**}$  \\
+			\hline
+		\end{tabular}
+		
+		\vspace{0.5em}
+		
+		\begin{tabular}{lcccc}
+			\hline
+			Variable & Exp(coef) & Exp($-$coef) & Lower 95\% CI & Upper 95\% CI \\
+			\hline
+			\texttt{m.age}     & 1.0076 & 0.9924 & 1.003 & 1.0119 \\
+			\texttt{sex}female & 0.9211 & 1.0857 & 0.874 & 0.9706 \\
+			\hline\hline
+		\end{tabular}
+		
+		\vspace{0.5em}
+		
+		\begin{flushleft}
+			\small
+			$n = 26{,}574$; Number of events $= 5{,}616$ \\
+			Concordance $= 0.519$ (SE $= 0.004$) \\
+			Likelihood ratio test $= 22.52$ on 2 df, $p = 1 \times 10^{-5}$ \\
+			Wald test $= 22.52$ on 2 df, $p = 1 \times 10^{-5}$ \\
+			Score (logrank) test $= 22.53$ on 2 df, $p = 1 \times 10^{-5}$ \\[4pt]
+			Signif.\ codes: $^{***}$ $p < 0.001$; $^{**}$ $p < 0.01$; $^{*}$ $p < 0.05$
+		\end{flushleft}
+	\end{table}
+	
+	\textbf{Mother's Age (m.age)
+		The coefficient is positive (0.0076) and highly significant (p = 0.000344). The hazard ratio (exp(coef)) is 1.0076, which means that for each additional year of the mother's age, the hazard of child mortality increases by about 0.76 percent. So children born to older mothers faced a slightly higher risk of death. The effect is statistically significant but small in magnitude.}
+		
+		\vspace{0.5cm}
+		
+		\textbf{Infant's Gender (sex: female)
+		The coefficient is negative (-0.082) and significant (p = 0.002). The hazard ratio is 0.921, meaning female infants had about a 7.9 percent lower hazard of death compared to male infants (the reference category). In other words, boys were at higher risk of dying than girls in this population.}
+	
+		\textbf{Overall Model Fit}
+	
+	\vspace{0.2cm}
+	
+	\textbf{The sample includes 26,574 children, of whom 5,616 experienced the event (death). The concordance of 0.519 is only slightly above 0.5 (which would be random guessing), suggesting that while both covariates are statistically significant predictors, they don't explain a large share of the variation in child mortality — which makes sense, since many other factors (nutrition, disease, socioeconomic conditions) also drive mortality but aren't in the model. The likelihood ratio, Wald, and score tests all reject the null hypothesis that both coefficients are zero (p = 0.00001), confirming the model as a whole is statistically significant.}
+	
+
+\section*{Question 2}
+\vspace{.25cm}
+\noindent We want to estimate how the amount of damage caused by a disaster relates to (1) whether disaster relief is provided and (2) the amount of relief that is provided  conditional on a donation occurring when a disaster hits a given country. Estimate a Heckman selection model using the \texttt{disasters\_response} data on \href{https://raw.githubusercontent.com/ASDS-TCD/StatsII_2026/refs/heads/main/datasets/disaster_response.csv}{GitHub} in which \texttt{binContribution} is the outcome for the selection equation, and \texttt{originalContributionMillionUSDLogged} is the outcome for the second equation. Use \texttt{occurrences  + deathsEM + normalizedDamageEMLogged} as your input variables for both equations. Present and interpret the output.
+
+
+	\lstinputlisting[language=R, firstline=61,lastline=86]{PS04_RS.r} 
+	
+\vspace{10cm}
+	
+	
+	
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Tobit 2 Model (Sample Selection Model)}
+		\label{tab:tobit2}
+		
+		\vspace{0.3em}
+		\begin{flushleft}
+			\small
+			\textit{Maximum Likelihood estimation via Newton-Raphson (16 iterations)} \\
+			Log-Likelihood: $-17{,}557.78$ \quad
+			$n = 49{,}096$ (45,848 censored; 3,248 observed) \quad
+			Free parameters: 10 (df $= 49{,}086$)
+		\end{flushleft}
+		
+		\vspace{0.5em}
+		
+		% --- Probit Selection Equation ---
+		\textbf{Probit Selection Equation}
+		
+		\vspace{0.3em}
+		\begin{tabular}{lcccc}
+			\hline\hline
+			Variable & Estimate & Std.\ Error & $t$ value & $p$-value \\
+			\hline
+			(Intercept)                   & $-1.3039428$ & $0.0180255$ & $-72.34$ & $< 2\times10^{-16}$ $^{***}$ \\
+			\texttt{occurrences}          &  $0.0192811$ & $0.0016553$ &  $11.65$ & $< 2\times10^{-16}$ $^{***}$ \\
+			\texttt{deathsEM}             &  $0.0118603$ & $0.0007308$ &  $16.23$ & $< 2\times10^{-16}$ $^{***}$ \\
+			\texttt{normalizedDamageEMLogged} & $0.0210385$ & $0.0009035$ & $23.29$ & $< 2\times10^{-16}$ $^{***}$ \\
+			\hline\hline
+		\end{tabular}
+		
+		\vspace{1em}
+		
+		% --- Outcome Equation ---
+		\textbf{Outcome Equation}
+		
+		\vspace{0.3em}
+		\begin{tabular}{lcccc}
+			\hline\hline
+			Variable & Estimate & Std.\ Error & $t$ value & $p$-value \\
+			\hline
+			(Intercept)                   &  $0.413489$ & $0.407490$ &  $1.015$ & $0.310243$ \\
+			\texttt{occurrences}          & $-0.001849$ & $0.006353$ & $-0.291$ & $0.770989$ \\
+			\texttt{deathsEM}             &  $0.005801$ & $0.002031$ &  $2.856$ & $0.004294$ $^{**}$  \\
+			\texttt{normalizedDamageEMLogged} & $-0.018056$ & $0.005234$ & $-3.450$ & $0.000561$ $^{***}$ \\
+			\hline\hline
+		\end{tabular}
+		
+		\vspace{1em}
+		
+		% --- Error Terms ---
+		\textbf{Error Terms}
+		
+		\vspace{0.3em}
+		\begin{tabular}{lcccc}
+			\hline\hline
+			& Estimate & Std.\ Error & $t$ value & $p$-value \\
+			\hline
+			$\sigma$ & $1.93599$ & $0.10384$ & $18.645$ & $< 2\times10^{-16}$ $^{***}$ \\
+			$\rho$   & $-0.52668$ & $0.09104$ & $-5.785$ & $7.29\times10^{-9}$ $^{***}$ \\
+			\hline\hline
+		\end{tabular}
+		
+		\vspace{0.5em}
+		\begin{flushleft}
+			\small
+			Signif.\ codes: $^{***}$ $p < 0.001$; $^{**}$ $p < 0.01$; $^{*}$ $p < 0.05$
+		\end{flushleft}
+		
+	\end{table}
+	
+	
+	
+
+     \textbf{Selection Equation: All three predictors are highly significant and positive. More disaster occurrences, more deaths, and greater economic damage all increase the probability of a contribution being made. This is intuitive — more severe disasters attract more donor attention.}
+     
+	\vspace{1cm}
+	
+	\textbf{Outcome Equation: Once a donation occurs, only deaths and normalized damage significantly predict the amount. More deaths lead to larger contributions (p = 0.004), while higher normalized damage is associated with slightly smaller contributions (p $<$ 0.001), which may reflect that heavily damaged wealthier countries receive proportionally less international aid. The number of occurrences has no significant effect on donation size (p = 0.77).}
+	
+	\vspace{1cm}
+	
+	\textbf{Selection Bias (rho): Rho is -0.527 and highly significant (p $<$ 0.001), confirming that selection bias exists and the Heckman correction was necessary. The negative correlation suggests that unobserved factors making a donation more likely are associated with smaller donation amounts. A naive OLS on only the observed contributions would have produced biased results.}
+	
+
+\end{document}
